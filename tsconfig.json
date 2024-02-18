@@ -1,27 +1,14 @@
 {
   "compilerOptions": {
-    "outDir": "./build/",
-    "module": "ESNext",
-    "pretty": true,
-    "target": "es6",
-    "jsx": "react-jsx",
-    "lib": [ "es2015", "dom" ],
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
+    "target": "es6",                        
+    "module": "commonjs",                     
+    "jsx": "react-jsx",                          
+    "strict": true,                           
     "esModuleInterop": true,
-    "strict": true,
-    "baseUrl": ".",
-    "declaration": true,
+    "lib": [ "es2015", "dom" ],
+    "outDir": "./build/",
     "sourceMap": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
+    "declaration": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "build", "./src/stories"]

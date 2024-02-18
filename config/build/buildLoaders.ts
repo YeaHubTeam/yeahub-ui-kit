@@ -75,13 +75,13 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 
     const tsLoader = {
         exclude: /node_modules/,
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         use: [
             {
                 loader: 'ts-loader',
-                options: {
-                    transpileOnly: true,
-                }
+                // options: {
+                //     transpileOnly: true,
+                // }
             }
         ]
     }
