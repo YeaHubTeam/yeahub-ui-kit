@@ -7,7 +7,7 @@ interface ButtonProps {
   label: string;
   onClick?: () => void;
 }
-export const Button = ({
+const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
@@ -20,9 +20,10 @@ export const Button = ({
       type="button"
       className={[styles['storybook-button'], styles[`storybook-button--${size}`], mode].join(' ')}
       style={{ backgroundColor }}
-      {...props}
-    >
+      {...props}>
       {label}
     </button>
   );
 };
+
+export default Button;

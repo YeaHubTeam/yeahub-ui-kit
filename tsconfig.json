@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es6",                        
-    "module": "commonjs",                     
-    "jsx": "react-jsx",                          
-    "strict": true,                           
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react-jsx",
+    "strict": true,
     "esModuleInterop": true,
-    "lib": [ "es2015", "dom" ],
+    "lib": ["es2015", "dom"],
     "outDir": "./build/",
     "sourceMap": true,
     "declaration": true

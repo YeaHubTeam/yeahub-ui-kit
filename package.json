@@ -8,7 +8,11 @@
     "build:prod": "webpack --env mode=production",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "pub": "webpack && npm version patch && npm publish"
+    "pub": "webpack && npm version patch && npm publish",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "npx prettier --check --cache ./",
+    "prettier:fix": "npx prettier --write ./"
   },
   "repository": {
     "type": "git",
@@ -37,9 +41,16 @@
     "@types/storybook__react": "^5.2.1",
     "@types/webpack": "^5.28.5",
     "@types/webpack-env": "^1.18.4",
+    "@typescript-eslint/eslint-plugin": "7.0.1",
+    "@typescript-eslint/parser": "7.0.1",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^6.10.0",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
     "mini-css-extract-plugin": "^2.8.0",
+    "prettier": "3.2.5",
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",
     "storybook": "^7.6.16",
@@ -54,12 +65,14 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "*",
+    "react-dom": "*"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
   },
-  "files":["build"]
+  "files": [
+    "build"
+  ]
 }

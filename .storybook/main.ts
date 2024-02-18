@@ -1,39 +1,39 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
-import TsconfigPathsPlugin  from 'tsconfig-paths-webpack-plugin'
+import type { StorybookConfig } from '@storybook/react-webpack5';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-onboarding",
-    "@storybook/addon-interactions",
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-interactions',
     {
-      name: "storybook-css-modules",
+      name: 'storybook-css-modules',
       options: {
         cssModulesLoaderOptions: {
           importLoaders: 1,
           modules: {
-            localIdentName: 'css/[name].[contenthash:8].css',
-          },
-        },
+            localIdentName: 'css/[name].[contenthash:8].css'
+          }
+        }
       }
     },
     {
       name: 'storybook-addon-sass-postcss',
       options: {
         rule: {
-          test: /\.(scss|sass)$/i,
+          test: /\.(scss|sass)$/i
         }
       }
     }
   ],
   framework: {
-    name: "@storybook/react-webpack5",
+    name: '@storybook/react-webpack5',
     options: {
       builder: {
-        useSWC: true,
-      },
-    },
+        useSWC: true
+      }
+    }
   },
   swc: () => ({
     jsc: {
@@ -52,7 +52,7 @@ const config: StorybookConfig = {
     return config;
   },
   docs: {
-    autodocs: "tag",
-  },
+    autodocs: 'tag'
+  }
 };
 export default config;
