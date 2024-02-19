@@ -25,6 +25,6 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
     resolve: buildResolvers(options),
     externals: {
       react: 'react'
-    }
+    },
   };
 }
