@@ -11,12 +11,12 @@ export default (env: EnvVariables) => {
   const paths: BuildPaths = {
     output: path.resolve(__dirname, 'build'),
     entry: path.resolve(__dirname, 'src', 'index.ts'),
-    src: path.resolve(__dirname, 'src')
+    src: path.resolve(__dirname, 'src'),
   };
 
   const config: webpack.Configuration = buildWebpack({
     mode: env.mode ?? 'development',
-    paths
+    paths,
   });
 
   return config;
