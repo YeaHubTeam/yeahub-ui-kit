@@ -7,7 +7,7 @@ interface ButtonProps {
   label: string;
   onClick?: () => void;
 }
-const Button = ({
+export const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
@@ -25,5 +25,3 @@ const Button = ({
     </button>
   );
 };
-
-export default Button;
