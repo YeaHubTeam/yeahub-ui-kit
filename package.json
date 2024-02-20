@@ -1,0 +1,83 @@
+{
+  "name": "yeahub-ui-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/index.js",
+  "scripts": {
+    "build:dev": "npx webpack --env mode=development",
+    "build:prod": "npx webpack --env mode=production",
+    "storybook": "npx storybook dev -p 6006",
+    "build-storybook": "npx storybook build",
+    "pub": "npx webpack && npm version patch && npm publish",
+    "lint": "npx eslint --ext .ts,.tsx ./",
+    "lint-fix": "npx eslint --ext .ts,.tsx --fix ./",
+    "prettier": "npx prettier --check --cache ./",
+    "prettier:fix": "npx prettier --write ./",
+    "precommit": "npx lint-staged",
+    "prepare": "npx husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YeaHubTeam/yeahub-ui-kit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YeaHubTeam/yeahub-ui-kit/issues"
+  },
+  "homepage": "https://github.com/YeaHubTeam/yeahub-ui-kit#readme",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.16",
+    "@storybook/addon-interactions": "^7.6.16",
+    "@storybook/addon-links": "^7.6.16",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.16",
+    "@storybook/react": "^7.6.16",
+    "@storybook/react-webpack5": "^7.6.16",
+    "@storybook/test": "^7.6.16",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20.11.18",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@types/storybook__react": "^5.2.1",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-env": "^1.18.4",
+    "@typescript-eslint/eslint-plugin": "7.0.1",
+    "@typescript-eslint/parser": "7.0.1",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.10.0",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "mini-css-extract-plugin": "^2.8.0",
+    "prettier": "3.2.5",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "storybook": "^7.6.16",
+    "storybook-addon-sass-postcss": "^0.1.4",
+    "storybook-css-modules": "^1.0.8",
+    "style-loader": "^3.3.4",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "files": [
+    "build"
+  ]
+}
