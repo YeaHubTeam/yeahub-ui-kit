@@ -8,8 +8,9 @@
     "lib": ["es2015", "dom"],
     "outDir": "./build/",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": ["src"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": ["node_modules", "build", "./src/stories", "storybook-static"]
 }
