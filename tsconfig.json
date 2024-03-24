@@ -9,8 +9,7 @@
     "outDir": "./build/",
     "sourceMap": true,
     "declaration": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["node_modules", "build", "./src/stories", "storybook-static"]
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "./src/**/*stories.tsx", "storybook-static"]
 }

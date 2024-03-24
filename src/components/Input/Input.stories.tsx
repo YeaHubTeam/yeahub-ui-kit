@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Input } from './Input';
+import { Input } from '../Input/Input';
 import React from 'react';
 import { InputProps } from './types';
-
+import { FuiIconChevronDown12X12 } from '../Icon/Icon';
 const meta = {
   title: 'Data Entry/Input',
   component: Input,
@@ -23,7 +23,15 @@ const InputWithHooks = (props: InputProps) => {
     setValue(props.value);
   }, [props.value]);
 
-  return <Input {...props} value={value} onChange={setValue} />;
+  return (
+    <Input
+      {...props}
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      preffix={<p>dsfffffffff</p>}
+      suffix={<FuiIconChevronDown12X12 />}
+    />
+  );
 };
 
 export const Default: Story = {

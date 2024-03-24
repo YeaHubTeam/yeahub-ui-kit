@@ -1,5 +1,3 @@
-import styles from './Button.module.css';
-
 interface ButtonProps {
   primary?: boolean;
   backgroundColor?: string;
@@ -18,13 +16,9 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={[
-        styles['storybook-button'],
-        styles[`storybook-button--${size}`],
-        mode,
-      ].join(' ')}
       style={{ backgroundColor }}
       {...props}
+      className={`storybook-button storybook-button--${size} ${mode}`}
     >
       {label}
     </button>

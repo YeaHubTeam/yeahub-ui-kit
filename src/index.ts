@@ -1,3 +1,4 @@
-import { Button } from './Button/Button';
+import './scss/main.scss';
+import { Button } from './components/Button/Button';
 
 export { Button };
