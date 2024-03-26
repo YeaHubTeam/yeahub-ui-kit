@@ -1,30 +1,157 @@
-.storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-}
-.storybook-button--primary {
+/* @import '../../../sass/colors.scss'; */
+
+.yeahub-button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 0.75em;
+  border-radius: 4px;
   color: white;
-  background-color: #1ea7fd;
+  outline: none;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.25;
+  text-transform: capitalize;
+  background-color: blue;
+  border: 2px solid transparent;
+  user-select: none;
+  margin: 0.125em 0;
+
+  &:hover {
+    background-color: blueviolet;
+  }
+  /*
+  &:focus {
+    background-color: $palette-blue-600;
+    border: 2px solid $palette-blue-200;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $palette-blue-900;
+    border: 2px solid $palette-blue-900;
+  }
+
+  &:disabled {
+    background-color: $palette-ui-50;
+    border: 2px solid $palette-ui-50;
+    color: $palette-ui-600;
+    cursor: not-allowed;
+  }
+ 
+  & span {
+    background: transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }*/
 }
-.storybook-button--secondary {
-  color: #333;
+
+/* .primary {
+  //no overrides for now
+  //used as default
+} */
+
+.yeahub-button-secondary {
+  color: yellow;
+  background-color: green;
+  /*
+  &:hover {
+    background-color: $palette-ui-neutral-50;
+    color: $palette-blue-600;
+  }
+
+  &:focus {
+    background-color: $palette-ui-50;
+    border: 2px solid $palette-blue-200;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $palette-ui-600;
+    color: $palette-ui-0;
+    border: 2px solid transparent;
+  }
+
+  &:disabled {
+    background-color: $palette-ui-50;
+    color: $palette-ui-600;
+    cursor: not-allowed;
+  } */
+}
+
+.yeahub-button-text {
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  /* color: $palette-blue-600;
+
+  &:hover {
+    background-color: $palette-ui-neutral-50;
+    color: $palette-blue-600;
+  }
+
+  &:focus {
+    background-color: $palette-ui-50;
+    border: 2px solid $palette-blue-200;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $palette-ui-600;
+    color: $palette-ui-0;
+    border: 2px solid transparent;
+  }
+
+  &:disabled {
+    background-color: $palette-ui-50;
+    color: $palette-ui-600;
+    cursor: not-allowed;
+  } */
 }
-.storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+
+.yeahub-button-destructive {
+  color: white;
+  background-color: red;
+  /*
+  &:hover {
+    background-color: $palette-red-400;
+  }
+
+  &:focus {
+    background-color: $palette-red-600;
+    border: 2px solid $palette-orange-300;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $palette-red-700;
+    border: 2px solid $palette-red-700;
+  }
+
+  &:disabled {
+    background-color: $palette-ui-50;
+    color: $palette-ui-600;
+    cursor: not-allowed;
+  } */
 }
-.storybook-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+
+.yeahub-button-delimiter {
+  display: block;
+  width: 0.5em;
 }
-.storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+
+.yeahub-button-badge {
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  padding: 0.5em;
+  border-radius: 1em;
+
+  font-size: 0.6em;
+  line-height: 1;
+  text-transform: none;
+
+  background-color: darkblue;
+  color: white;
 }
