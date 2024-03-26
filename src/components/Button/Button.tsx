@@ -1,12 +1,12 @@
 import classnames from 'classnames';
-import React, { forwardRef, useCallback, memo, FC } from 'react';
+import React, { forwardRef, useCallback, memo } from 'react';
 
 import { ButtonTypes } from './types';
 import { prefix } from '../../prefix';
 
 const compPrefix = `${prefix}-button`;
 
-export const Button: FC<ButtonTypes> = memo(
+export const Button = memo(
   forwardRef<HTMLButtonElement, ButtonTypes>(
     (
       {
