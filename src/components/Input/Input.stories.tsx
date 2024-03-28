@@ -23,22 +23,26 @@ const InputWithHooks = (props: InputProps) => {
     setValue(props.value);
   }, [props.value]);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
   return (
     <Input
       {...props}
       value={value}
-      onChange={(e) => setValue(e.target.value)}
-      preffix={<p>dsfffffffff</p>}
+      onChange={handleChange}
+      preffix={<FuiIconChevronDown12X12 />}
       suffix={<FuiIconChevronDown12X12 />}
     />
   );
 };
 
-export const Default: Story = {
+export const BaseInput: Story = {
   render: (props) => <InputWithHooks {...props} />,
   name: 'Basic',
   args: {
     value: '',
-    placeholder: 'Placeholder',
+    placeholder: '',
   },
 };

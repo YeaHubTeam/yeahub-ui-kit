@@ -7,8 +7,6 @@ export interface InputProps extends React.ComponentPropsWithRef<'input'> {
   preffix?: React.ReactNode;
   suffix?: React.ReactNode;
   disabled?: boolean;
-  label?: string;
-  ariaLabel?: string;
   className?: string;
 }
 
