@@ -27,7 +27,6 @@ export const Button = memo(
     ): JSX.Element => {
       const handleClick = useCallback(
         (e: React.MouseEvent<HTMLButtonElement>) => {
-          e.persist();
           // prevent click when target is children
           if (!disabled) onClick?.(e);
         },
