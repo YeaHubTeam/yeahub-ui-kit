@@ -23,22 +23,47 @@ const InputWithHooks = (props: InputProps) => {
     setValue(props.value);
   }, [props.value]);
 
-  return (
-    <Input
-      {...props}
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      preffix={<p>dsfffffffff</p>}
-      suffix={<FuiIconChevronDown12X12 />}
-    />
-  );
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
+  return <Input {...props} value={value} onChange={handleChange} />;
 };
 
-export const Default: Story = {
+export const BaseInput: Story = {
   render: (props) => <InputWithHooks {...props} />,
   name: 'Basic',
   args: {
     value: '',
-    placeholder: 'Placeholder',
+    placeholder: 'Enter a text...',
+  },
+};
+
+export const InputWithPrefix: Story = {
+  render: (props) => <InputWithHooks preffix={<FuiIconChevronDown12X12 />} {...props} />,
+  name: 'InputWithPrefix',
+  args: {
+    value: '',
+    placeholder: 'Enter a text...',
+  },
+};
+
+export const InputWithSuffix: Story = {
+  render: (props) => <InputWithHooks suffix={<FuiIconChevronDown12X12 />} {...props} />,
+  name: 'InputWithPrefix',
+  args: {
+    value: '',
+    placeholder: 'Enter a text...',
+  },
+};
+
+export const InputDisabled: Story = {
+  render: (props) => (
+    <InputWithHooks suffix={<FuiIconChevronDown12X12 />} disabled {...props} />
+  ),
+  name: 'InputDisabled',
+  args: {
+    value: '',
+    placeholder: 'Enter a text...',
   },
 };
