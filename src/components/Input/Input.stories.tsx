@@ -27,15 +27,7 @@ const InputWithHooks = (props: InputProps) => {
     setValue(e.target.value);
   };
 
-  return (
-    <Input
-      {...props}
-      value={value}
-      onChange={handleChange}
-      preffix={<FuiIconChevronDown12X12 />}
-      suffix={<FuiIconChevronDown12X12 />}
-    />
-  );
+  return <Input {...props} value={value} onChange={handleChange} />;
 };
 
 export const BaseInput: Story = {
@@ -43,6 +35,35 @@ export const BaseInput: Story = {
   name: 'Basic',
   args: {
     value: '',
-    placeholder: '',
+    placeholder: 'Enter a text...',
+  },
+};
+
+export const InputWithPrefix: Story = {
+  render: (props) => <InputWithHooks preffix={<FuiIconChevronDown12X12 />} {...props} />,
+  name: 'InputWithPrefix',
+  args: {
+    value: '',
+    placeholder: 'Enter a text...',
+  },
+};
+
+export const InputWithSuffix: Story = {
+  render: (props) => <InputWithHooks suffix={<FuiIconChevronDown12X12 />} {...props} />,
+  name: 'InputWithPrefix',
+  args: {
+    value: '',
+    placeholder: 'Enter a text...',
+  },
+};
+
+export const InputDisabled: Story = {
+  render: (props) => (
+    <InputWithHooks suffix={<FuiIconChevronDown12X12 />} disabled {...props} />
+  ),
+  name: 'InputDisabled',
+  args: {
+    value: '',
+    placeholder: 'Enter a text...',
   },
 };

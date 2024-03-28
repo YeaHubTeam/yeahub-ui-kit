@@ -12,12 +12,22 @@
   border-color: transparent;
   border-radius: 0.3rem;
 
-  &[aria-disabled='true'] {
-    cursor: default;
+  &.yeahub-input-disabled:hover {
+    border-color: transparent;
+  }
+
+  &[aria-disabled='true'],
+  &.yeahub-input-disabled .yeahub-input-input {
+    cursor: not-allowed;
     background-color: rgb(222, 219, 219);
   }
 
   &:hover {
+    border-color: rgb(114, 162, 250);
+  }
+
+  &:focus-within {
+    box-shadow: 0 0 0 3px hsl(219, 93%, 91%);
     border-color: rgb(114, 162, 250);
   }
 }
