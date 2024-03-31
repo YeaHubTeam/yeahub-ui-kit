@@ -1,8 +1,8 @@
-import React, { useState, useCallback } from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { Meta, StoryObj, composeStory } from '@storybook/react';
 
 import { Label } from './Label';
-import { Input } from '../Input/Input';
+import InputMeta, { BaseInput as BaseInputStory } from '../Input/Input.stories';
 
 const meta = {
   title: 'Components/Label',
@@ -21,21 +21,14 @@ export const LabelRequired: Story = {
   render: () => <Label text="Label" required />,
 };
 
-const TextInputComponent = ({ placeholder }) => {
-  const [value, changeValue] = useState('');
-  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    changeValue(value);
-  }, []);
-  return <Input value={value} placeholder={placeholder} onChange={onChange} />;
-};
+const BaseInput = composeStory(BaseInputStory, InputMeta);
 
 export const LabelWithInput: Story = {
   render: (args) => {
     return (
       <>
         <Label {...args}>
-          <TextInputComponent placeholder="placeholder" />
+          <BaseInput placeholder="placeholder" />
         </Label>
       </>
     );
