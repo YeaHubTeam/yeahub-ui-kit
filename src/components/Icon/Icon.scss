@@ -1,0 +1,22 @@
+.yeahub-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.yeahub-icon-loading {
+  position: absolute;
+}
+
+.yeahub-icon-loading svg {
+  animation: spin 1.5s linear infinite;
+}

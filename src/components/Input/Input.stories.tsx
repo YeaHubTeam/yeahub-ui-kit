@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Input } from '../Input/Input';
 import React from 'react';
 import { InputProps } from './types';
-import { FuiIconChevronDown12X12 } from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 const meta = {
   title: 'Data Entry/Input',
   component: Input,
@@ -40,7 +40,9 @@ export const BaseInput: Story = {
 };
 
 export const InputWithPrefix: Story = {
-  render: (props) => <InputWithHooks preffix={<FuiIconChevronDown12X12 />} {...props} />,
+  render: (props) => (
+    <InputWithHooks preffix={<Icon icon="cap" size={24} />} {...props} />
+  ),
   name: 'InputWithPrefix',
   args: {
     value: '',
@@ -49,7 +51,7 @@ export const InputWithPrefix: Story = {
 };
 
 export const InputWithSuffix: Story = {
-  render: (props) => <InputWithHooks suffix={<FuiIconChevronDown12X12 />} {...props} />,
+  render: (props) => <InputWithHooks suffix={<Icon icon="cap" size={24} />} {...props} />,
   name: 'InputWithPrefix',
   args: {
     value: '',
@@ -59,7 +61,7 @@ export const InputWithSuffix: Story = {
 
 export const InputDisabled: Story = {
   render: (props) => (
-    <InputWithHooks suffix={<FuiIconChevronDown12X12 />} disabled {...props} />
+    <InputWithHooks suffix={<Icon icon="cap" size={24} />} disabled {...props} />
   ),
   name: 'InputDisabled',
   args: {
