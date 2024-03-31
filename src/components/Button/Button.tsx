@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { forwardRef, useCallback, memo } from 'react';
+import React, { forwardRef, memo } from 'react';
 
 import { ButtonTypes } from './types';
 import { prefix } from '../../prefix';
@@ -13,7 +13,6 @@ export const Button = memo(
         theme = 'primary',
         value,
         textClassName,
-        onClick,
         isActive,
         className,
         iconLeft: IconLeft,
@@ -25,19 +24,10 @@ export const Button = memo(
       },
       ref
     ): JSX.Element => {
-      const handleClick = useCallback(
-        (e: React.MouseEvent<HTMLButtonElement>) => {
-          // prevent click when target is children
-          if (!disabled) onClick?.(e);
-        },
-        [onClick, disabled]
-      );
-
       return (
         <button
           ref={ref}
           disabled={disabled}
-          onClick={handleClick}
           className={classnames(`${compPrefix}`, `${compPrefix}-${[theme]}`, className, {
             [`${compPrefix}-is-active`]: isActive,
           })}
