@@ -30,10 +30,8 @@ export const Text = memo(
             `${compPrefix}-${[size]}`,
           ])}
         >
-          {title && (
-            <HeaderTag className={classNames(`${compPrefix}-title`)}>{title}</HeaderTag>
-          )}
-          {text && <p className={classNames(`${compPrefix}-text`)}>{text}</p>}
+          {title && <HeaderTag className="title">{title}</HeaderTag>}
+          {text && <p className="text">{text}</p>}
         </div>
       );
     }
