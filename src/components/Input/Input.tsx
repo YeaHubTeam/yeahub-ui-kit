@@ -29,12 +29,16 @@ export const Input: FC<InputProps> = memo(
 
     return (
       <div
-        aria-hidden
+        aria-hidden={disabled}
         className={inputContainerClassNames}
         onClick={() => inputRef.current?.focus()}
         aria-disabled={disabled}
       >
-        {preffix && <span className={`${compPrefix}-preffix`}>{preffix}</span>}
+        {preffix && (
+          <span className={`${compPrefix}-preffix`} role="img">
+            {preffix}
+          </span>
+        )}
         <div className={`${compPrefix}-container`}>
           <input
             {...otherProps}
@@ -43,7 +47,11 @@ export const Input: FC<InputProps> = memo(
             ref={cbRef}
           />
         </div>
-        {suffix && <span className={`${compPrefix}-suffix`}>{suffix}</span>}
+        {suffix && (
+          <span className={`${compPrefix}-suffix`} role="img">
+            {suffix}
+          </span>
+        )}
       </div>
     );
   })

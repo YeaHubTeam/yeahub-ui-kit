@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/YeaHubTeam/yeahub-ui-kit#readme",
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.16",
     "@storybook/addon-interactions": "^7.6.16",
     "@storybook/addon-links": "^7.6.16",

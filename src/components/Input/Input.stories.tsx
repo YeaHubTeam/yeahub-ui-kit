@@ -61,7 +61,7 @@ export const InputWithSuffix: Story = {
 
 export const InputDisabled: Story = {
   render: (props) => (
-    <InputWithHooks suffix={<Icon icon="cap" size={24} />} disabled {...props} />
+    <InputWithHooks suffix={<Icon icon="search" size={20} />} disabled {...props} />
   ),
   name: 'InputDisabled',
   args: {
