@@ -14,13 +14,13 @@ export const Icon: FC<IconProps> = memo(
       [`${compPrefix}-loading`]: icon === 'loading',
     });
 
-    const svgColor = `var(--${color})`;
+    // const svgColor = `var(--${color})`;
 
     return (
       <div className={classNames} {...props}>
         <SVG
           width={size}
-          color={svgColor}
+          color={color}
           height={size}
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"

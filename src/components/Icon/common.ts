@@ -12,10 +12,28 @@ import OpenSidebar from '../../assets/icons/open_sidebar.svg';
 import Search from '../../assets/icons/search.svg';
 import Settings from '../../assets/icons/settings.svg';
 
-export const icons: Record<
-  string,
-  (arg?: boolean) => React.FunctionComponent<React.SVGAttributes<SVGElement>>
-> = {
+type IconsName =
+  | 'cap'
+  | 'chat'
+  | 'check'
+  | 'chevroneDown'
+  | 'chevroneLeft'
+  | 'chevroneRight'
+  | 'closeSidebar'
+  | 'closeSidebar'
+  | 'follow'
+  | 'kebab'
+  | 'notification'
+  | 'search'
+  | 'settings'
+  | 'sidebar'
+  | 'loading';
+
+type IconComponent = (
+  arg?: boolean
+) => React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+
+export const icons: Record<IconsName, IconComponent> = {
   cap: () => Cap,
   chat: () => Chat,
   check: () => Check,
@@ -29,4 +47,5 @@ export const icons: Record<
   search: () => Search,
   settings: () => Settings,
   sidebar: (isExpanded?) => (isExpanded ? CloseSidebar : OpenSidebar),
+  loading: () => Settings,
 };
