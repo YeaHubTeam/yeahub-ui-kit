@@ -1,150 +1,154 @@
-/* @import '../../../sass/colors.scss'; */
-
 .yeahub-button {
   position: relative;
+
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0.5em 0.75em;
-  border-radius: 4px;
-  color: white;
-  outline: none;
-  font-weight: 400;
+  height: 3rem;
+  border-radius: 1.5rem;
+  padding: 0 0.75rem;
+
+  color: var(--palette-ui-white-900);
   font-size: 1em;
-  line-height: 1.25;
   text-transform: capitalize;
-  background-color: blue;
-  border: 2px solid transparent;
-  user-select: none;
-  margin: 0.125em 0;
 
-  &:hover {
-    background-color: blueviolet;
-  }
-  /*
-  &:focus {
-    background-color: $palette-blue-600;
-    border: 2px solid $palette-blue-200;
-  }
-
-  &:active,
-  &.is-active {
-    background-color: $palette-blue-900;
-    border: 2px solid $palette-blue-900;
-  }
+  background-color: transparent;
+  border: none;
 
   &:disabled {
-    background-color: $palette-ui-50;
-    border: 2px solid $palette-ui-50;
-    color: $palette-ui-600;
     cursor: not-allowed;
   }
- 
+
   & span {
+    margin: 0 0.6rem;
     background: transparent;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }*/
+  }
+
+  &.is-square {
+    width: 3rem;
+    min-width: auto;
+    border-radius: 10px;
+    padding: 0.5rem;
+  }
 }
 
-/* .primary {
-  //no overrides for now
-  //used as default
-} */
+.yeahub-button-small {
+  width: 150px;
+}
+.yeahub-button-medium {
+  width: 240px;
+}
+.yeahub-button-large {
+  width: 300px;
+}
+
+.yeahub-button-primary {
+  background-color: var(--palette-ui-purple-700);
+
+  &:hover {
+    background-color: var(--palette-ui-purple-800);
+  }
+
+  &:focus {
+    background-color: var(--palette-ui-purple-800);
+    border: 2px solid var(--palette-ui-purple-900);
+  }
+
+  &:active,
+  &.is-active {
+    background-color: var(--palette-ui-purple-900);
+  }
+
+  &:disabled {
+    background-color: var(--palette-ui-black-100);
+    cursor: not-allowed;
+  }
+}
 
 .yeahub-button-secondary {
-  color: yellow;
-  background-color: green;
-  /*
+  color: var(--palette-ui-purple-800);
+  background-color: var(--palette-ui-purple-200);
+
   &:hover {
-    background-color: $palette-ui-neutral-50;
-    color: $palette-blue-600;
+    background-color: var(--palette-ui-purple-300);
   }
 
   &:focus {
-    background-color: $palette-ui-50;
-    border: 2px solid $palette-blue-200;
+    background-color: var(--palette-ui-purple-300);
+    border: 2px solid var(--palette-ui-purple-500);
   }
 
   &:active,
   &.is-active {
-    background-color: $palette-ui-600;
-    color: $palette-ui-0;
-    border: 2px solid transparent;
+    background-color: var(--palette-ui-purple-400);
   }
 
   &:disabled {
-    background-color: $palette-ui-50;
-    color: $palette-ui-600;
-    cursor: not-allowed;
-  } */
+    background-color: var(--palette-ui-black-50);
+    color: var(--palette-ui-black-200);
+  }
 }
 
-.yeahub-button-text {
-  background-color: transparent;
-  /* color: $palette-blue-600;
+.yeahub-button-outline {
+  color: var(--palette-ui-purple-700);
+  border: 1px solid var(--palette-ui-purple-700);
 
   &:hover {
-    background-color: $palette-ui-neutral-50;
-    color: $palette-blue-600;
+    color: var(--palette-ui-purple-800);
+    border: 1px solid var(--palette-ui-purple-800);
   }
 
   &:focus {
-    background-color: $palette-ui-50;
-    border: 2px solid $palette-blue-200;
+    color: var(--palette-ui-purple-800);
+    border: 2px solid var(--palette-ui-purple-800);
   }
 
   &:active,
   &.is-active {
-    background-color: $palette-ui-600;
-    color: $palette-ui-0;
-    border: 2px solid transparent;
+    color: var(--palette-ui-purple-900);
+    border: 1px solid var(--palette-ui-purple-900);
   }
 
   &:disabled {
-    background-color: $palette-ui-50;
-    color: $palette-ui-600;
-    cursor: not-allowed;
-  } */
+    color: var(--palette-ui-black-100);
+    border: 2px solid var(--palette-ui-black-100);
+  }
 }
 
-.yeahub-button-destructive {
-  color: white;
-  background-color: red;
-  /*
+.yeahub-button-link {
+  height: auto;
+  width: fit-content;
+  padding: 0;
+
+  color: var(--palette-ui-purple-700);
+  cursor: default;
+
   &:hover {
-    background-color: $palette-red-400;
+    color: var(--palette-ui-purple-800);
   }
 
   &:focus {
-    background-color: $palette-red-600;
-    border: 2px solid $palette-orange-300;
+    color: var(--palette-ui-purple-800);
   }
 
   &:active,
   &.is-active {
-    background-color: $palette-red-700;
-    border: 2px solid $palette-red-700;
+    color: var(--palette-ui-purple-900);
   }
 
   &:disabled {
-    background-color: $palette-ui-50;
-    color: $palette-ui-600;
-    cursor: not-allowed;
-  } */
-}
-
-.yeahub-button-delimiter {
-  display: block;
-  width: 0.5em;
+    color: var(--palette-ui-black-100);
+  }
 }
 
 .yeahub-button-badge {
   position: absolute;
   top: -0.5em;
-  right: -0.5em;
+  right: 0;
   padding: 0.5em;
   border-radius: 1em;
 

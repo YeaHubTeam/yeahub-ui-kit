@@ -1,13 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
 import React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
+
+import { Button } from './Button';
+import { Icon } from '../Icon/Icon';
 
 const meta = {
   title: 'Components/Button',
   component: Button,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
   argTypes: {},
 } satisfies Meta<typeof Button>;
@@ -18,77 +17,134 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     theme: 'primary',
+    value: 'Primary button',
+    preffix: <Icon icon="cap" size={24} />,
+    suffix: <Icon icon="cap" size={24} />,
   },
-  render: () => (
-    <>
-      <Button value="Primary" />
-      <br />
-      <Button value="Primary with Icon" /* icon={AddIcon} */ />
-      <br />
-      <Button /* icon={AddIcon} */ />
-      <br />
-      <Button value="Primary" /* icon={AddIcon} */ disabled />
-      <br />
-      <Button value="Primary" /* icon={AddIcon} */ isActive />
-    </>
-  ),
+  render: (args) => {
+    const { preffix, suffix, ...rest } = args;
+    return (
+      <>
+        <Button preffix={preffix} size="large" {...rest} />
+        <br />
+        <Button {...rest} />
+        <br />
+        <Button preffix={preffix} size="small" disabled {...rest} />
+        <br />
+        <Button suffix={suffix} isActive value="Primary pressed" theme="primary" />
+        <br />
+        <Button aria-label="Primary button" preffix={preffix} theme={args.theme} />
+      </>
+    );
+  },
 };
 
 export const Secondary: Story = {
   args: {
     theme: 'secondary',
+    value: 'Secondary button',
+    preffix: <Icon icon="cap" size={24} />,
+    suffix: <Icon icon="cap" size={24} />,
   },
-  render: (args) => (
-    <>
-      <Button value="Secondary" {...args} />
-      <br />
-      <Button value="Secondary with Icon" {...args} /* icon={AddIcon} */ />
-      <br />
-      <Button value="Secondary" {...args} /* icon={AddIcon} */ isActive />
-      <br />
-      <Button {...args} /* icon={AddIcon} */ />
-      <br />
-      <Button value="Secondary" {...args} /* icon={AddIcon} */ disabled />
-    </>
-  ),
+  render: (args) => {
+    const { preffix, suffix, ...rest } = args;
+    return (
+      <>
+        <Button preffix={preffix} size="large" {...rest} />
+        <br />
+        <Button {...rest} />
+        <br />
+        <Button preffix={preffix} size="small" disabled {...rest} />
+        <br />
+        <Button suffix={suffix} isActive value="Secondary pressed" theme="secondary" />
+        <br />
+        <Button aria-label="Primary button" preffix={preffix} theme={args.theme} />
+      </>
+    );
+  },
 };
 
-export const Destructive: Story = {
+export const Outline: Story = {
   args: {
-    theme: 'destructive',
+    theme: 'outline',
+    value: 'Outline button',
+    preffix: <Icon icon="cap" size={24} />,
+    suffix: <Icon icon="cap" size={24} />,
   },
-  render: (args) => (
-    <>
-      <Button value="Destructive" {...args} />
-      <br />
-      <Button value="Destructive with Icon" {...args} /* icon={AddIcon} */ />
-      <br />
-      <Button value="Destructive" {...args} /* icon={AddIcon} */ isActive />
-      <br />
-      <Button {...args} /* icon={AddIcon} */ />
-      <br />
-      <Button value="Destructive" {...args} /* icon={AddIcon} */ disabled />
-    </>
-  ),
+  render: (args) => {
+    const { preffix, suffix, ...rest } = args;
+    return (
+      <>
+        <Button preffix={preffix} size="large" {...rest} />
+        <br />
+        <Button {...rest} />
+        <br />
+        <Button preffix={preffix} size="small" disabled {...rest} />
+        <br />
+        <Button suffix={suffix} isActive value="Outline pressed" theme={args.theme} />
+        <br />
+        <Button aria-label="Outline button" preffix={preffix} theme={args.theme} />
+      </>
+    );
+  },
+};
+
+export const Link: Story = {
+  args: {
+    theme: 'link',
+    value: 'Link button',
+    tagName: 'a',
+    preffix: <Icon icon="cap" size={24} />,
+    suffix: <Icon icon="cap" size={24} />,
+  },
+  render: (args) => {
+    const { preffix, suffix, ...rest } = args;
+    return (
+      <>
+        <Button {...rest} />
+        <br />
+        <Button preffix={preffix} size="large" {...rest} />
+        <br />
+        <Button preffix={preffix} size="small" disabled {...rest} />
+        <br />
+        <Button
+          suffix={suffix}
+          isActive
+          value="Link pressed"
+          theme={args.theme}
+          tagName={args.tagName}
+        />
+        <br />
+        <Button
+          aria-label="Outline button"
+          preffix={preffix}
+          theme={args.theme}
+          tagName={args.tagName}
+        />
+      </>
+    );
+  },
 };
 
 export const Badge: Story = {
-  render: () => (
-    <>
-      <Button theme="secondary" value="Badge" badge={11} />
-      <br />
-      <Button
-        theme="primary"
-        value="Badge with Icon"
-        badge={10}
-        /* icon={AddIcon} */
-      />
-      <br />
-      <Button theme="destructive" value="Badge" badge={9} /* icon={AddIcon} */ isActive />
-      <br />
-      <Button theme="primary" badge={0} /* icon={AddIcon} */ />
-      <br />
-      <Button theme="primary" value="Badge" badge="text" /* icon={AddIcon} */ disabled />
-    </>
-  ),
+  args: {
+    theme: 'primary',
+    value: 'Primary button',
+    preffix: <Icon icon="cap" size={24} />,
+    suffix: <Icon icon="cap" size={24} />,
+  },
+  render: (args) => {
+    const { preffix, suffix, ...rest } = args;
+    return (
+      <>
+        <Button preffix={preffix} size="large" badge={46} {...rest} />
+        <br />
+        <Button badge={46} value="Secondary button" theme="secondary" />
+        <br />
+        <Button preffix={preffix} size="small" badge={46} disabled {...rest} />
+        <br />
+        <Button suffix={suffix} value="Primary pressed" theme="outline" badge={46} />
+      </>
+    );
+  },
 };
