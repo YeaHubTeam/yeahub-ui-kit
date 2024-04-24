@@ -1,6 +1,10 @@
 .yeahub-button-primary {
   background-color: var(--palette-ui-purple-700);
 
+  & svg {
+    color: var(--palette-ui-white-900);
+  }
+
   &:hover {
     background-color: var(--palette-ui-purple-800);
   }
@@ -25,6 +29,10 @@
   color: var(--palette-ui-purple-800);
   background-color: var(--palette-ui-purple-200);
 
+  & svg {
+    color: var(--palette-ui-purple-800);
+  }
+
   &:hover {
     background-color: var(--palette-ui-purple-300);
   }
@@ -42,6 +50,10 @@
   &:disabled {
     background-color: var(--palette-ui-black-50);
     color: var(--palette-ui-black-200);
+
+    & svg {
+      color: var(--palette-ui-black-200);
+    }
   }
 }
 
@@ -49,15 +61,27 @@
   color: var(--palette-ui-purple-700);
   border: 1px solid var(--palette-ui-purple-700);
 
+  & svg {
+    color: var(--palette-ui-purple-700);
+  }
+
   &:hover {
     color: var(--palette-ui-purple-800);
     border: 1px solid var(--palette-ui-purple-800);
     background-color: var(--palette-ui-purple-50);
+
+    & svg {
+      color: var(--palette-ui-purple-800);
+    }
   }
 
   &:focus {
     color: var(--palette-ui-purple-800);
     border: 2px solid var(--palette-ui-purple-800);
+
+    & svg {
+      color: var(--palette-ui-purple-800);
+    }
   }
 
   &:active,
@@ -65,16 +89,28 @@
     color: var(--palette-ui-purple-900);
     border: 1px solid var(--palette-ui-purple-900);
     background-color: var(--palette-ui-purple-100);
+
+    & svg {
+      color: var(--palette-ui-purple-900);
+    }
   }
 
   &:disabled {
     color: var(--palette-ui-black-100);
     border: 2px solid var(--palette-ui-black-100);
+
+    & svg {
+      color: var(--palette-ui-black-100);
+    }
   }
 }
 
 .yeahub-button-tertiary {
   color: var(--palette-ui-black-800);
+
+  & svg {
+    color: var(--palette-ui-black-800);
+  }
 
   &:hover {
     background-color: var(--palette-ui-black-25);
@@ -84,6 +120,10 @@
     color: var(--palette-ui-black-700);
     border: 1px solid var(--palette-ui-black-700);
     background-color: var(--palette-ui-black-25);
+
+    & svg {
+      color: var(--palette-ui-black-700);
+    }
   }
 
   &:active,
@@ -94,6 +134,10 @@
   &:disabled {
     color: var(--palette-ui-black-200);
     background-color: inherit;
+
+    & svg {
+      color: var(--palette-ui-black-200);
+    }
   }
 }
 
@@ -105,12 +149,24 @@
   color: var(--palette-ui-purple-700);
   cursor: default;
 
+  & svg {
+    color: var(--palette-ui-purple-700);
+  }
+
   &:hover {
     color: var(--palette-ui-purple-800);
+
+    & svg {
+      color: var(--palette-ui-purple-800);
+    }
   }
 
   &:focus {
     color: var(--palette-ui-purple-800);
+
+    & svg {
+      color: var(--palette-ui-purple-800);
+    }
   }
 
   &:active,
@@ -125,6 +181,10 @@
 
 .yeahub-button-destructive {
   background-color: var(--palette-ui-red-600);
+
+  & svg {
+    color: var(--palette-ui-white-900);
+  }
 
   &:hover {
     background-color: var(--palette-ui-red-700);
@@ -150,6 +210,10 @@
   background-color: var(--palette-ui-red-100);
   color: var(--palette-ui-red-600);
 
+  & svg {
+    color: var(--palette-ui-red-600);
+  }
+
   &:hover {
     background-color: var(--palette-ui-red-200);
   }
@@ -163,18 +227,30 @@
   &.is-active {
     background-color: var(--palette-ui-red-300);
     color: var(--palette-ui-red-700);
+
+    & svg {
+      color: var(--palette-ui-red-700);
+    }
   }
 
   &:disabled {
     background-color: var(--palette-ui-red-25);
     color: var(--palette-ui-red-200);
     cursor: not-allowed;
+
+    & svg {
+      color: var(--palette-ui-red-200);
+    }
   }
 }
 
 .yeahub-button-destructive-outline {
   color: var(--palette-ui-red-600);
   border: 1px solid var(--palette-ui-red-600);
+
+  & svg {
+    color: var(--palette-ui-red-600);
+  }
 
   &:hover {
     border: 1px solid var(--palette-ui-red-600);
@@ -191,17 +267,29 @@
     color: var(--palette-ui-red-800);
     border: 1px solid var(--palette-ui-red-800);
     background-color: var(--palette-ui-red-100);
+
+    & svg {
+      color: var(--palette-ui-red-800);
+    }
   }
 
   &:disabled {
     color: var(--palette-ui-red-200);
     border: 1px solid var(--palette-ui-red-200);
     background-color: inherit;
+
+    & svg {
+      color: var(--palette-ui-red-200);
+    }
   }
 }
 
 .yeahub-button-destructive-tertiary {
   color: var(--palette-ui-red-600);
+
+  & svg {
+    color: var(--palette-ui-red-600);
+  }
 
   &:hover {
     background-color: var(--palette-ui-red-25);
@@ -215,10 +303,18 @@
   &.is-active {
     color: var(--palette-ui-red-700);
     background-color: var(--palette-ui-red-100);
+
+    & svg {
+      color: var(--palette-ui-red-700);
+    }
   }
 
   &:disabled {
     color: var(--palette-ui-red-200);
     background-color: inherit;
+
+    & svg {
+      color: var(--palette-ui-red-200);
+    }
   }
 }
