@@ -21,128 +21,24 @@
   }
 
   & span {
-    margin: 0 0.6rem;
+    margin: 0 0.5rem;
     background: transparent;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  &.is-square {
-    width: 3rem;
-    min-width: auto;
-    border-radius: 10px;
-    padding: 0.5rem;
   }
 }
 
 .yeahub-button-small {
   width: 150px;
 }
+
 .yeahub-button-medium {
-  width: 240px;
+  width: 170px;
 }
+
 .yeahub-button-large {
-  width: 300px;
-}
-
-.yeahub-button-primary {
-  background-color: var(--palette-ui-purple-700);
-
-  &:hover {
-    background-color: var(--palette-ui-purple-800);
-  }
-
-  &:focus {
-    background-color: var(--palette-ui-purple-800);
-    border: 2px solid var(--palette-ui-purple-900);
-  }
-
-  &:active,
-  &.is-active {
-    background-color: var(--palette-ui-purple-900);
-  }
-
-  &:disabled {
-    background-color: var(--palette-ui-black-100);
-    cursor: not-allowed;
-  }
-}
-
-.yeahub-button-secondary {
-  color: var(--palette-ui-purple-800);
-  background-color: var(--palette-ui-purple-200);
-
-  &:hover {
-    background-color: var(--palette-ui-purple-300);
-  }
-
-  &:focus {
-    background-color: var(--palette-ui-purple-300);
-    border: 2px solid var(--palette-ui-purple-500);
-  }
-
-  &:active,
-  &.is-active {
-    background-color: var(--palette-ui-purple-400);
-  }
-
-  &:disabled {
-    background-color: var(--palette-ui-black-50);
-    color: var(--palette-ui-black-200);
-  }
-}
-
-.yeahub-button-outline {
-  color: var(--palette-ui-purple-700);
-  border: 1px solid var(--palette-ui-purple-700);
-
-  &:hover {
-    color: var(--palette-ui-purple-800);
-    border: 1px solid var(--palette-ui-purple-800);
-  }
-
-  &:focus {
-    color: var(--palette-ui-purple-800);
-    border: 2px solid var(--palette-ui-purple-800);
-  }
-
-  &:active,
-  &.is-active {
-    color: var(--palette-ui-purple-900);
-    border: 1px solid var(--palette-ui-purple-900);
-  }
-
-  &:disabled {
-    color: var(--palette-ui-black-100);
-    border: 2px solid var(--palette-ui-black-100);
-  }
-}
-
-.yeahub-button-link {
-  height: auto;
-  width: fit-content;
-  padding: 0;
-
-  color: var(--palette-ui-purple-700);
-  cursor: default;
-
-  &:hover {
-    color: var(--palette-ui-purple-800);
-  }
-
-  &:focus {
-    color: var(--palette-ui-purple-800);
-  }
-
-  &:active,
-  &.is-active {
-    color: var(--palette-ui-purple-900);
-  }
-
-  &:disabled {
-    color: var(--palette-ui-black-100);
-  }
+  width: 240px;
 }
 
 .yeahub-button-badge {
