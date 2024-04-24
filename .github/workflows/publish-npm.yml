@@ -1,0 +1,42 @@
+name: publish
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [17.x]
+
+    steps:
+        - uses: actions/checkout@v3
+
+        - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org
+
+        - name: Install dependencies
+        run: npm i
+
+        - name: Build
+        run: npm run build:prod
+        if: always()
+
+        - name: build storybook
+        run: npm run build-storybook
+        if: always()
+        
+        - name: publish
+        run: npm pub
+       
+
+          env:
+          # We need this to our NPM account
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} 
