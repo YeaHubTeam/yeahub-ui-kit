@@ -1,14 +1,6 @@
+import { IconTheme } from '../IconButton/index';
 export interface ButtonProps extends React.ComponentPropsWithRef<'button'> {
-  theme?:
-    | 'primary'
-    | 'secondary'
-    | 'outline'
-    | 'tertiary'
-    | 'link'
-    | 'destructive'
-    | 'destructive-secondary'
-    | 'destructive-outline'
-    | 'destructive-tertiary';
+  theme?: IconTheme;
   iconBtnTheme?: 'square' | 'round';
   size?: 'small' | 'medium' | 'large';
   preffix?: React.ReactNode;
