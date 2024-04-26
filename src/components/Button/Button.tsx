@@ -23,7 +23,6 @@ export const Button = memo(
         type = 'button',
         tagName = defaultTag,
         disabled,
-        'aria-label': ariaLabel,
         ...otherProps
       },
       ref
@@ -39,13 +38,11 @@ export const Button = memo(
             className,
             {
               [`is-active`]: isActive,
-              [`is-square`]: !value,
             }
           )}
           disabled={disabled}
           aria-disabled={disabled}
           type={type}
-          {...(!value ? { 'aria-label': ariaLabel } : {})}
           {...otherProps}
         >
           {preffix}
