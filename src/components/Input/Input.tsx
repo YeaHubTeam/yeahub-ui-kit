@@ -16,7 +16,7 @@ export const Input: FC<InputProps> = memo(
         if (!ref) return;
         if (ref instanceof Function) {
           ref(element);
-        } else if (ref) {
+        } else {
           ref.current = element;
         }
       },

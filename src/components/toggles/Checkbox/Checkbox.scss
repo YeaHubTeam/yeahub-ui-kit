@@ -1,0 +1,76 @@
+.yeahub-checkbox__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+
+  .yeahub-checkbox_input {
+    width: 1;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked {
+      +.yeahub-checkbox {
+        border: 2px solid var(--palette-ui-purple-700);
+        background: var(--palette-ui-purple-700);
+
+        .yeahub-checkbox_icon {
+          stroke: var(--palette-ui-white-900);
+          stroke-width: 3px;
+        }
+      }
+
+      &:disabled {
+        +.yeahub-checkbox {
+          border: 2px solid var(--palette-ui-black-50);
+
+          .yeahub-checkbox_icon {
+            background: var(--palette-ui-black-25);
+            stroke: var(--palette-ui-black-200);
+          }
+
+        }
+
+        ~.yeahub-checkbox_text {
+          color: var(--palette-ui-black-200);
+        }
+      }
+    }
+
+    &:disabled {
+      +.yeahub-checkbox {
+        border: 2px solid var(--palette-ui-black-50);
+        background: var(--palette-ui-black-25);
+        cursor: not-allowed;
+
+      }
+
+      ~.yeahub-checkbox_text {
+        color: var(--palette-ui-black-200);
+        cursor: not-allowed;
+      }
+    }
+
+  }
+
+  .yeahub-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--palette-ui-black-50);
+    border-radius: var(--yeahub-border-radius-sm);
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      border-color: var(--palette-ui-purple-500);
+    }
+
+    &:focus {
+      border-color: var(--palette-ui-purple-700);
+    }
+
+  }
+
+}
