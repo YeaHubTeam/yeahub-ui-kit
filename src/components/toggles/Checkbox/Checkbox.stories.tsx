@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { CheckboxProps } from './types';
 
 const meta = {
-  title: 'Data Entry/Checkbox',
+  title: 'Components/Toggles/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',
