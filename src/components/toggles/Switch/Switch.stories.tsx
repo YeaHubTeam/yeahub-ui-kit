@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 
 import { Switch } from './Switch';
+import { SwitchProps } from './types';
 
 const meta = {
   title: 'Components/Toggles/Switch',
@@ -13,23 +14,41 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const SwitchWithHooks = (props: SwitchProps) => {
+  const [checked, setChecked] = useState<boolean>(!!props.checked);
+
+  useEffect(() => {
+    setChecked(!!props.checked);
+  }, [props.checked]);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+
+  return <Switch {...props} checked={checked} onChange={handleChange} />;
+};
+
 export const SwitchToggle: Story = {
   args: {
     checked: false,
-    onChange: () => {},
   },
   render: (args) => {
     return (
       <>
-        <Switch {...args} />
+        <SwitchWithHooks {...args} />
         <br />
-        <Switch label="text label" {...args} />
+        <SwitchWithHooks label="text label" {...args} />
         <br />
-        <Switch checked label="checked" onChange={args.onChange} />
+        <SwitchWithHooks checked label="checked" onChange={args.onChange} />
         <br />
-        <Switch disabled label="disabled" {...args} />
+        <SwitchWithHooks disabled label="disabled" {...args} />
         <br />
-        <Switch disabled label="disabled checked" checked onChange={args.onChange} />
+        <SwitchWithHooks
+          disabled
+          label="disabled checked"
+          checked
+          onChange={args.onChange}
+        />
       </>
     );
   },
