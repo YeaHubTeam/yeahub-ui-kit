@@ -7,25 +7,19 @@ import cn from 'classnames';
 const compPrefix = `${prefix}-icon`;
 
 export const Icon: FC<IconProps> = memo(
-  ({ icon, size = 24, color = 'black', arg = false, ...props }) => {
+  ({ icon, size = 32, color = 'black', className, arg = false }) => {
     const SVG = icons[icon](arg);
-
-    const classNames = cn(compPrefix, {
-      [`${compPrefix}-loading`]: icon === 'loading',
-    });
-
-    // const svgColor = `var(--${color})`;
-
+    const svgColor = `var(${color})`;
+    const transformStyle = {
+      transform: `scale(${size / 32})`,
+      transformOrigin: 'center',
+    };
     return (
-      <div className={classNames} {...props}>
-        <SVG
-          width={size}
-          color={color}
-          height={size}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        />
-      </div>
+      <SVG
+        style={transformStyle}
+        className={cn(compPrefix, className)}
+        color={svgColor}
+      />
     );
   }
 );

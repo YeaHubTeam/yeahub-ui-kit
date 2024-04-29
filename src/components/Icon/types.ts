@@ -1,12 +1,13 @@
 import { ComponentPropsWithoutRef } from 'react';
-import { icons } from './common';
+import { IconsName } from './common';
+import { CSSPropertiesWithVars } from '../types';
 
-export type Icons = keyof typeof icons;
-export type IconSize = 20 | 24 | 36;
+export type IconSize = 20 | 24 | 32;
 
 export interface IconProps extends ComponentPropsWithoutRef<'div'> {
-  icon: Icons;
+  icon: IconsName;
   size?: IconSize;
-  color?: string;
+  color?: CSSPropertiesWithVars;
+  className?: string;
   arg?: boolean;
 }

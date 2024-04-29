@@ -2,8 +2,8 @@ import { FC } from 'react';
 
 import { prefix } from '../../../prefix';
 import { CheckboxProps } from './types';
-import Check from '../../../assets/icons/check.svg';
 import cn from 'classnames';
+import { Icon } from '../../Icon/Icon';
 const compPrefix = `${prefix}-checkbox`;
 
 export const Checkbox: FC<CheckboxProps> = ({
@@ -27,7 +27,7 @@ export const Checkbox: FC<CheckboxProps> = ({
         disabled={disabled}
       />
       <span className={cn(compPrefix, className)}>
-        {checked && <Check className={`${compPrefix}_icon`} />}
+        {checked && <Icon icon="check" size={20} className={`${compPrefix}_icon`} />}
       </span>
       {label && <span className={`${compPrefix}_text`}>{label}</span>}
     </label>

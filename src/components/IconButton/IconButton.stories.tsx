@@ -35,7 +35,7 @@ export const IconsButtonSquare: Story = {
               <span>{`${theme} large`}</span>
               <IconButton
                 aria-label={args['aria-label']}
-                icon={<Icon icon="search" size={36} />}
+                icon={<Icon icon="search" size={32} />}
                 theme={theme}
                 form="square"
                 size="large"
@@ -104,7 +104,7 @@ export const IconsButtonRound: Story = {
               <span>{`${theme} large`}</span>
               <IconButton
                 aria-label={args['aria-label']}
-                icon={<Icon icon="search" size={36} />}
+                icon={<Icon icon="search" size={32} />}
                 theme={theme}
                 form="round"
                 size="large"
