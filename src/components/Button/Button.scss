@@ -1,0 +1,57 @@
+.yeahub-button {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  border-radius: 1.5rem;
+  padding: 0 0.75rem;
+
+  color: var(--palette-ui-white-900);
+  font-size: 1em;
+  text-transform: capitalize;
+
+  background-color: transparent;
+  border: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  & span {
+    margin: 0 0.5rem;
+    background: transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.yeahub-button-small {
+  width: 150px;
+}
+
+.yeahub-button-medium {
+  width: 170px;
+}
+
+.yeahub-button-large {
+  width: 240px;
+}
+
+.yeahub-button-badge {
+  position: absolute;
+  top: -0.5em;
+  right: 0;
+  padding: 0.5em;
+  border-radius: 1em;
+
+  font-size: 0.6em;
+  line-height: 1;
+  text-transform: none;
+
+  background-color: darkblue;
+  color: white;
+}

@@ -1,0 +1,16 @@
+:root {
+  /*shape*/
+  --yeahub-border-radius-round: 1000px;
+  --yeahub-border-radius-xxlg: 12px;
+  --yeahub-border-radius-xlg: 10px;
+  --yeahub-border-radius-lg: 8px;
+  --yeahub-border-radius-md: 6px;
+  --yeahub-border-radius-sm: 4px;
+  --yeahub-border-radius-xs: 2px;
+
+  /*box shadows*/
+  /*controls*/
+  --yeahub-focus-shadow: 0 0 0 3px var(--palette-ui-purple-100);
+  --yeahub-focus-shadow-error: 0 0 0 3px var(--palette-ui-red-100);
+  --yeahub-focus-shadow-valid: 0 0 0 3px var(--palette-ui-green-200);
+}

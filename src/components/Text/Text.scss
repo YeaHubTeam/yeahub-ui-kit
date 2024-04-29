@@ -1,0 +1,66 @@
+.yeahub-text-primary {
+  .title {
+    color: var(--primary-color);
+  }
+  .text {
+    color: var(--primary-color);
+  }
+}
+
+.yeahub-text-error {
+  .title {
+    color: var(--error-light);
+  }
+  .text {
+    color: var(--error-dark);
+    color: red;
+  }
+}
+
+.yeahub-text-warning {
+  .title {
+    color: var(--warning-light);
+  }
+  .text {
+    color: var(--warning-dark);
+  }
+}
+
+.yeahub-text-left {
+  text-align: left;
+}
+
+.yeahub-text-center {
+  text-align: center;
+}
+
+.yeahub-text-right {
+  text-align: right;
+}
+
+.yeahub-text-size_s {
+  .title {
+    font: var(--font-m);
+  }
+  .text {
+    font: var(--font-s);
+  }
+}
+
+.yeahub-text-size_m {
+  .title {
+    font: var(--font-l);
+  }
+  .text {
+    font: var(--font-m);
+  }
+}
+
+.yeahub-text-size_l {
+  .title {
+    font: var(--font-xl);
+  }
+  .text {
+    font: var(--font-l);
+  }
+}

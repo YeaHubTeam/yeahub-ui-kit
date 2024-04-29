@@ -1,0 +1,17 @@
+@import './reset.scss';
+@import './colors.scss';
+@import './variables.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('../components/Button/Button.scss');
+@import url('../components/Input/Input.scss');
+@import url('../components/Text/Text.scss');
+@import url('../components/Label/Label.scss');
+@import url('../components/FormControl/FormControl.scss');
+@import url('../components/Icon/Icon.scss');
+@import url('../components/IconButton/IconButton.scss');
+@import url('../components/toggles/Checkbox/Checkbox.scss');
+@import url('./buttons.scss');
+@import url('../components/toggles/Switch/Switch.scss');
+@import url('../components/TextArea/TextArea.scss');
