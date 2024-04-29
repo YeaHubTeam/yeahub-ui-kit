@@ -7,6 +7,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
+    '@storybook/addon-a11y',
     {
       name: 'storybook-css-modules',
       options: {
@@ -48,6 +49,24 @@ const config: StorybookConfig = {
     if (configType === 'DEVELOPMENT') {
       config.resolve?.plugins?.push(new TsconfigPathsPlugin());
     }
+
+    const imageRule = config.module?.rules?.find(rule => {
+      const test = (rule as { test: RegExp }).test
+
+      if (!test) {
+        return false
+      }
+
+      return test.test('.svg')
+    }) as { [key: string]: any }
+
+    imageRule.exclude = /\.svg$/
+
+    config.module?.rules?.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack']
+    })
+
 
     return config;
   },

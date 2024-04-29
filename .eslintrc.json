@@ -26,7 +26,12 @@
     }
   },
   "rules": {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/function-component-definition": [
       2,
       {
@@ -35,6 +40,7 @@
       }
     ],
     "@typescript-eslint/no-shadow": 0,
+    "react/prop-types": 0,
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "import/no-absolute-path": 0,

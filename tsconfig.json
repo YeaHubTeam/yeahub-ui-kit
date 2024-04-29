@@ -8,8 +8,8 @@
     "lib": ["es2015", "dom"],
     "outDir": "./build/",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build", "./src/stories", "storybook-static"]
+  "exclude": ["node_modules", "build", "./src/**/*stories.tsx", "storybook-static"]
 }

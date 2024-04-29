@@ -32,40 +32,11 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     ],
   };
 
-  const cssLoaderWithModules = {
-    loader: 'css-loader',
-    options: {
-      modules: {
-        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
-      },
-    },
-  };
-
-  const scssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, cssLoaderWithModules, 'sass-loader'],
-  };
-
   const cssLoader = {
-    test: /\.css$/,
-    use: [
-      'style-loader',
-      {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 1,
-          modules: true,
-        },
-      },
-    ],
-    include: /\.module\.css$/,
+    test: /\.s[ac]ss$/i,
+    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
   };
 
-  const globalCss = {
-    test: /\.css$/,
-    use: ['style-loader', 'css-loader'],
-    exclude: /\.module\.css$/,
-  };
 
   const tsLoader = {
     exclude: /node_modules/,
@@ -73,12 +44,9 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     use: [
       {
         loader: 'ts-loader',
-        // options: {
-        //     transpileOnly: true,
-        // }
       },
     ],
   };
 
-  return [assetLoader, cssLoader, globalCss, scssLoader, tsLoader, svgrLoader];
+  return [assetLoader, cssLoader, tsLoader, svgrLoader];
 }
