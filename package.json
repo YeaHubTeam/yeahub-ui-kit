@@ -8,7 +8,7 @@
     "build:prod": "npx webpack --env mode=production",
     "storybook": "npx storybook dev -p 6006",
     "build-storybook": "npx storybook build",
-    "pub": "npx webpack && npm version patch && npm publish",
+    "pub": "npm version patch && npm publish",
     "lint": "npx eslint --ext .ts,.tsx ./",
     "lint-fix": "npx eslint --ext .ts,.tsx --fix ./",
     "prettier": "npx prettier --check --cache ./",
