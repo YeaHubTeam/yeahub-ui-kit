@@ -1,26 +1,25 @@
-name: publish
+name: "🚀 publish"
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: 📚 checkout
+        uses: actions/checkout@v3
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
-      - name: Install Dependencies
+      - name: 🟢 Install Dependencies
         run: npm i
       - name: Build Project
         run: npm run build:prod
       - name: publish
-        run: npm pub
+        run: npm pub --access public
         env:
           # We need this to our NPM account
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN1 }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
