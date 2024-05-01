@@ -41,7 +41,7 @@ export const BaseInput: Story = {
 
 export const InputWithPrefix: Story = {
   render: (props) => (
-    <InputWithHooks preffix={<Icon icon="cap" size={24} />} {...props} />
+    <InputWithHooks preffix={<Icon icon="airplaneTakeoff" size={24} />} {...props} />
   ),
   name: 'InputWithPrefix',
   args: {
@@ -51,7 +51,9 @@ export const InputWithPrefix: Story = {
 };
 
 export const InputWithSuffix: Story = {
-  render: (props) => <InputWithHooks suffix={<Icon icon="cap" size={24} />} {...props} />,
+  render: (props) => (
+    <InputWithHooks suffix={<Icon icon="addressBook" size={24} />} {...props} />
+  ),
   name: 'InputWithPrefix',
   args: {
     value: '',
