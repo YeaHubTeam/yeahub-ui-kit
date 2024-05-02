@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
       - name: Install and build
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: npm i
           build_command: npm run build-storybook
