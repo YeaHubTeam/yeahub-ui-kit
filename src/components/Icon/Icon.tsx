@@ -19,6 +19,8 @@ export const Icon: FC<IconProps> = memo(
         style={transformStyle}
         className={cn(compPrefix, className)}
         color={svgColor}
+        width={32}
+        height={32}
       />
     );
   }
