@@ -1,4 +1,5 @@
 .yeahub-button {
+  
   position: relative;
 
   display: flex;
@@ -6,8 +7,9 @@
   align-items: center;
   justify-content: center;
   height: 3rem;
-  border-radius: 1.5rem;
+  border-radius: var(--yeahub-button-radius-small);
   padding: 0 0.75rem;
+  cursor: pointer;
 
   color: var(--palette-ui-white-900);
   font-size: 1em;
@@ -31,14 +33,17 @@
 
 .yeahub-button-small {
   width: 150px;
+  border-radius: var(--yeahub-button-radius-small);
 }
 
 .yeahub-button-medium {
   width: 170px;
+  border-radius: var(--yeahub-button-radius-medium);
 }
 
 .yeahub-button-large {
   width: 240px;
+  border-radius: var(--yeahub-button-radius-large);
 }
 
 .yeahub-button-badge {

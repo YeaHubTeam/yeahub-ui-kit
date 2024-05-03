@@ -57,6 +57,9 @@
   .yeahub-checkbox {
     width: 20px;
     height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid var(--palette-ui-black-50);
     border-radius: var(--yeahub-border-radius-sm);
     cursor: pointer;
@@ -71,12 +74,6 @@
       border-color: var(--palette-ui-purple-700);
     }
 
-  }
-
-  .yeahub-checkbox_icon {
-    position: absolute;
-    top: -50%;
-    left: -50%;
   }
 
 }

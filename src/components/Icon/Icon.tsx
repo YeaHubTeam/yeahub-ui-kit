@@ -7,20 +7,17 @@ import cn from 'classnames';
 const compPrefix = `${prefix}-icon`;
 
 export const Icon: FC<IconProps> = memo(
-  ({ icon, size = 32, color = 'black', className, arg = false }) => {
+  ({ icon, size = 32, color = '--palette-ui-black-900', className, arg = false }) => {
     const SVG = icons[icon](arg);
     const svgColor = `var(${color})`;
-    const transformStyle = {
-      transform: `scale(${size / 32})`,
-      transformOrigin: 'center',
-    };
     return (
       <SVG
-        style={transformStyle}
         className={cn(compPrefix, className)}
         color={svgColor}
-        width={32}
-        height={32}
+        width={size}
+        height={size}
+        viewBox={`0 0 32 32`}
+        preserveAspectRatio="xMidYMid meet"
       />
     );
   }

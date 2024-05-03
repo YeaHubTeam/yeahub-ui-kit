@@ -141,7 +141,7 @@ export const IconsButtonRound: Story = {
               <span>{`${theme} small disabled`}</span>
               <IconButton
                 aria-label={args['aria-label']}
-                icon={<Icon icon="search" size={20} />}
+                icon={<Icon icon="search" size={32} />}
                 theme={theme}
                 form="round"
                 size="small"
