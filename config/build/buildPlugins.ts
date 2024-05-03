@@ -1,5 +1,4 @@
 import webpack, { Configuration } from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/types';
 import CopyPlugin from 'copy-webpack-plugin';
 import path from 'path';
@@ -15,12 +14,6 @@ export function buildPlugins({ mode, paths }: BuildOptions): Configuration['plug
   }
 
   if (isProd) {
-    plugins.push(
-      new MiniCssExtractPlugin({
-        filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[name].[contenthash:8].css',
-      })
-    );
     // когда нужно будет делать сборку добавить пути для копии ассетов в билд
     plugins.push(new CopyPlugin({
         patterns: [

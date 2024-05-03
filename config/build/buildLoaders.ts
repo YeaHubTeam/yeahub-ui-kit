@@ -1,9 +1,7 @@
 import { ModuleOptions } from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/types';
 
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
-  const isDev = options.mode === 'development';
 
   const assetLoader = {
     test: /\.(png|jpg|jpeg|gif)$/i,
@@ -34,9 +32,8 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 
   const cssLoader = {
     test: /\.s[ac]ss$/i,
-    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+    use: ['style-loader', 'css-loader', 'sass-loader'],
   };
-
 
   const tsLoader = {
     exclude: /node_modules/,
