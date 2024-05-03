@@ -18,8 +18,8 @@ export const Primary: Story = {
   args: {
     theme: 'primary',
     value: 'Primary button',
-    preffix: <Icon icon="addressBook" color="--palette-ui-white-900" size={24} />,
-    suffix: <Icon icon="search" color="--palette-ui-white-900" size={24} />,
+    preffix: <Icon icon="addressBook" color="--palette-ui-white-900" size={32} />,
+    suffix: <Icon icon="search" color="--palette-ui-white-900" size={32} />,
   },
   render: (args) => {
     const { preffix, suffix, ...rest } = args;
