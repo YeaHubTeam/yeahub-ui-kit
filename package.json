@@ -71,12 +71,14 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.13",
     "react": "*",
     "react-dom": "*"
   },
   "peerDependencies": {
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "@floating-ui/react": "^0.26.13"
   },
   "files": [
     "build"
