@@ -10,4 +10,5 @@ export interface IconProps extends ComponentPropsWithoutRef<'div'> {
   color?: CSSPropertiesWithVars;
   className?: string;
   arg?: boolean;
+  onClick?: () => void;
 }
