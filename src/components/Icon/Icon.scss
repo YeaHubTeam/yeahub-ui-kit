@@ -2,3 +2,10 @@
   line-height: 0;
   vertical-align: top;
 }
+.yeahub-icon_clickable {
+  cursor: pointer;
+  transition: 0.2s ease;
+  &:hover {
+    filter: drop-shadow(0rem 0rem 2px rgba(0, 0, 0, 0.2));
+  }
+}
