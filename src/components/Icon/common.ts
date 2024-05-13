@@ -845,6 +845,7 @@ import Paragraph from '../../assets/icons/Paragraph.svg';
 import Parallelogram from '../../assets/icons/Parallelogram.svg';
 import Park from '../../assets/icons/Park.svg';
 import Password from '../../assets/icons/Password.svg';
+import PasswordHide from '../../assets/icons/PasswordShow.svg';
 import Path from '../../assets/icons/Path.svg';
 import PatreonLogo from '../../assets/icons/PatreonLogo.svg';
 import Pause from '../../assets/icons/Pause.svg';
@@ -3350,7 +3351,7 @@ export const icons: Record<IconsName, IconComponent> = {
   paragraph: () => Paragraph,
   parallelogram: () => Parallelogram,
   park: () => Park,
-  password: () => Password,
+  password: (isShow?: boolean) => (isShow ? PasswordHide : Password),
   path: () => Path,
   patreonLogo: () => PatreonLogo,
   pause: () => Pause,

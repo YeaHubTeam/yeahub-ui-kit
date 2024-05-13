@@ -30,6 +30,35 @@ const InputWithHooks = (props: InputProps) => {
   return <Input {...props} value={value} onChange={handleChange} />;
 };
 
+const InputWithHooksAndPassword = (props: InputProps) => {
+  const [value, setValue] = React.useState(props.value);
+  const [show, setShow] = React.useState(false);
+  React.useEffect(() => {
+    setValue(props.value);
+  }, [props.value]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
+  return (
+    <Input
+      {...props}
+      value={value}
+      onChange={handleChange}
+      type={show ? 'text' : 'password'}
+      suffix={
+        <Icon
+          icon="password"
+          arg={show}
+          onClick={() => setShow((prev) => !prev)}
+          color="--palette-ui-purple-400"
+        />
+      }
+    />
+  );
+};
+
 export const BaseInput: Story = {
   render: (props) => <InputWithHooks {...props} />,
   name: 'Basic',
@@ -55,6 +84,15 @@ export const InputWithSuffix: Story = {
     <InputWithHooks suffix={<Icon icon="addressBook" size={24} />} {...props} />
   ),
   name: 'InputWithPrefix',
+  args: {
+    value: '',
+    placeholder: 'Enter a text...',
+  },
+};
+
+export const InputWithSuffixPassword: Story = {
+  render: (props) => <InputWithHooksAndPassword {...props} type="password" />,
+  name: 'InputWithPassword',
   args: {
     value: '',
     placeholder: 'Enter a text...',

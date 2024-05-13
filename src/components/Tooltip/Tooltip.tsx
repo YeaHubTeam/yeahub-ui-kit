@@ -79,7 +79,9 @@ export const Tooltip: FC<TooltipProps> = ({
           >
             <FloatingArrow
               tipRadius={1}
-              fill={COLORS[color]}
+              fill="white"
+              stroke={COLORS[color]}
+              strokeWidth={1}
               height={8}
               width={16}
               context={context}
