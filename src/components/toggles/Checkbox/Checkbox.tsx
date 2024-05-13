@@ -14,7 +14,7 @@ export const Checkbox: FC<CheckboxProps> = ({
   label,
 }) => {
   const handleToggle = () => {
-    onToggle(!checked);
+    onToggle?.(!checked);
   };
 
   return (
