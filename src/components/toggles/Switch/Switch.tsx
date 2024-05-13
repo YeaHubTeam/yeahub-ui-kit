@@ -47,7 +47,7 @@ export const Switch = forwardRef<HTMLDivElement, SwitchProps>(
   }
 );
 
-Switch.displayName = 'Toggle';
+Switch.displayName = 'Switch';
 
 Switch.defaultProps = {
   disabled: false,
