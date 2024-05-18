@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sandbox CKEditor build</title>
+    <script src="../build/ckeditor.js"></script>
+    <style>
+      body {
+        background-color: #eee8d5;
+        height: 100vh;
+      }
+
+      /*.ck.ck-content {*/
+      /*    height: 400px;*/
+      /*}*/
+
+      .ck.ck-content {
+        white-space: nowrap;
+        overflow-x: hidden;
+      }
+
+      .c-cke-wildcard {
+        background-color: #5e6380;
+      }
+
+      .is-highlight-invalid-wildcards-on .c-ck-wildcard__compatible {
+        background-color: #a3defc !important;
+      }
+
+      .is-highlight-invalid-wildcards-on .c-ck-wildcard__incompatible {
+        background-color: #f7ccd8 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Normal CKE5 mode</h2>
+    <div class="classic-editor"></div>
+
+    <div style="margin: 5em 0"></div>
+
+    <h2>Balloon CKE5 mode</h2>
+    <div class="classic-editor-inline"></div>
+
+    <script>
+      // Normal CKE5 mode.
+      CKEDITOR5.CustomClassicEditor.create(document.querySelector('.classic-editor'), {
+        licenseKey: '',
+        initialData: '',
+      })
+        .then((editor) => {
+          window.classicEditor = editor;
+        })
+        .catch(console.error);
+
+      // Emulate Balloon CKE5 mode.
+      CKEDITOR5.CustomBalloonEditor.create(
+        document.querySelector('.classic-editor-inline'),
+        {
+          licenseKey: '',
+          initialData: `<p>Here we go&nbsp;<span class="c-cke-wildcard js-wildcard-value" data-wildcard-value="Date" data-wildcard-caption="Date">[Date]</span></p>`,
+          placeholder: 'Subject',
+          /* toolbar: { items: [] }, */
+          /* removePlugins: [
+            'CustomImage',
+            'CustomLink',
+            'Attachment',
+            'Alignment',
+            'Bold',
+
+            'FontBackgroundColor',
+            'FontColor',
+            'FontFamily',
+            'FontSize',
+            'Heading',
+            'HorizontalLine',
+
+            'Indent',
+            'Italic',
+            'Link',
+            'List',
+            'GeneralHtmlSupport',
+            'RemoveFormat',
+            'SimpleUploadAdapter',
+            'Strikethrough',
+            'Table',
+            'TableCaption',
+            'TableToolbar',
+            'TableProperties',
+            'TableCellProperties',
+            'PlainTableOutput',
+            'Underline',
+          ], */
+        }
+      )
+        .then((editor) => {
+          window.classicEditorInline = editor;
+
+          editor.editing.view.document.on(
+            'enter',
+            (event, data) => {
+              data.preventDefault();
+              event.stop();
+              return;
+            },
+            { priority: 'high' }
+          );
+        })
+        .catch(console.error);
+    </script>
+  </body>
+</html>
