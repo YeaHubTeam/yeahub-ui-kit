@@ -9,7 +9,7 @@ module.exports = {
   output: {
     // The name under which the editor will be exported.
     library: 'CKEDITOR5',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'ckeditor.js',
     libraryTarget: 'umd',
     libraryExport: 'default',
@@ -31,7 +31,6 @@ module.exports = {
       // UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
       // When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.ts).
       language: 'ru',
-      additionalLanguages: 'all',
     }),
   ],
   resolve: {

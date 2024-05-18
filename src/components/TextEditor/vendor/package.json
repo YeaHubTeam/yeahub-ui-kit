@@ -6,9 +6,9 @@
   "author": "Siarhei Shapavalau",
   "main": "./build/ckeditor.ts",
   "scripts": {
-    "clean": "rimraf build node_modules",
+    "clean": "rimraf dist node_modules",
     "build": "npm run clean && npm i && webpack --mode production",
-    "build:dev": "rimraf build && webpack --mode development"
+    "build:dev": "rimraf dist && webpack --mode development"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-basic-styles": "41.4.1",
