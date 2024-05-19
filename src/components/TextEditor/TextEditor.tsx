@@ -1,8 +1,8 @@
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import React, { useCallback, useRef, memo } from 'react';
+import React, { FC, useCallback, useRef, memo } from 'react';
 import type { EventInfo } from '@ckeditor/ckeditor5-utils';
 import cn from 'classnames';
-import type { Editor } from '@ckeditor/ckeditor5-core';
+import { Editor } from '@ckeditor/ckeditor5-core';
 
 import CKE from './vendor/dist/ckeditor.js';
 import { EditorProps } from './types';
@@ -10,7 +10,7 @@ import { prefix } from '../../prefix';
 
 const compPrefix = `${prefix}-text-editor`;
 
-export const TextEditor = memo((props: EditorProps) => {
+export const TextEditor: FC<EditorProps> = memo((props) => {
   const {
     isInline,
     data,

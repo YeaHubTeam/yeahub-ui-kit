@@ -3,7 +3,7 @@ import { BuildOptions } from './types/types';
 
 export function buildResolvers(options: BuildOptions): Configuration['resolve'] {
   return {
-    extensions: ['.tsx', '.ts'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
     symlinks: false,
   };
 }
