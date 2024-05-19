@@ -9,6 +9,8 @@ import { Text } from './components/Text';
 import { TextArea } from './components/TextArea';
 import { Checkbox } from './components/toggles/Checkbox';
 import { Switch } from './components/toggles/Switch';
+import { Radio } from './components/toggles/Radio';
+import { TextEditor } from './components/TextEditor';
 
 export {
   Button,
@@ -21,4 +23,6 @@ export {
   TextArea,
   Checkbox,
   Switch,
+  Radio,
+  TextEditor,
 };
