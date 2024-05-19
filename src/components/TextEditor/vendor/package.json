@@ -4,7 +4,8 @@
   "private": true,
   "version": "1.0.0",
   "author": "Siarhei Shapavalau",
-  "main": "./build/ckeditor.ts",
+  "main": "./dist/ckeditor.ts",
+  "types": "./dist/ckeditor.d.ts",
   "scripts": {
     "clean": "rimraf dist node_modules",
     "build": "npm run clean && npm i && webpack --mode production",

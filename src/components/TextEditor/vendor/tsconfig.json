@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
     "types": [],
-    "lib": [
-      "ES2019",
-      "ES2020.String",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2019", "ES2020.String", "DOM", "DOM.Iterable"],
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "strict": true,
@@ -15,9 +10,9 @@
     "sourceMap": true,
     "allowJs": true,
     "moduleResolution": "node",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declaration": true,
+    "outDir": "./dist"
   },
-  "include": [
-    "./src"
-  ]
+  "include": ["./src"]
 }
