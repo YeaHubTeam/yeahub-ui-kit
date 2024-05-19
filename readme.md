@@ -55,6 +55,25 @@ $ npm i
 $ npm run storybook
 ```
 
+## Customization process of the TextEditor based on CKEditor 5
+
+1. Go to `/TextEditor/vendor`folder, `npm i`.
+2. Go to `/TextEditor` and make required changes (you might need to adjust the core build setup in /vendor).
+3. Go to `/TextEditor/vendor` and run `npm run build`. It re-create a custom build of CKEditor 5 classic.
+4. Test your changes.
+5. Push `ckeditor.js` custom build file to GIT if you have generated to reflect the new update.
+
+## How to add a new custom plugin to Editor
+
+1. Develop a new plugin in `/vendor/src/plugins`.
+2. Import a new plugin class in `/vendor/src/configs/plugins` and add to a corresponding array.
+3. Add plugin to Editor's toolbar if necessary. `/vendor/src/configs/toolbar`.
+4. `npm run build` on `/vendor` folder level to get a fresh custom build of Editor itself.
+
+## How to debug internals of CKEditor engine
+
+1. Open our Sandbox `index.html` page containing a rich text and don't close it!
+
 ## Publishing
 
 ### Запуск локального тестирования инструкция
