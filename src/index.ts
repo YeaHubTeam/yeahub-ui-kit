@@ -11,6 +11,7 @@ import { Checkbox } from './components/toggles/Checkbox';
 import { Switch } from './components/toggles/Switch';
 import { Radio } from './components/toggles/Radio';
 import { TextEditor } from './components/TextEditor';
+import { Chip } from './components/Chip';
 
 export {
   Button,
@@ -25,4 +26,5 @@ export {
   Switch,
   Radio,
   TextEditor,
+  Chip,
 };
