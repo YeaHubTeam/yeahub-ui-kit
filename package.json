@@ -1,6 +1,6 @@
 {
   "name": "yeahub-ui-kit",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "./build/index.js",
   "scripts": {
@@ -71,14 +71,15 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^6.3.0",
     "@floating-ui/react": "^0.26.13",
     "react": "*",
     "react-dom": "*"
   },
   "peerDependencies": {
+    "@floating-ui/react": "^0.26.13",
     "react": "*",
-    "react-dom": "*",
-    "@floating-ui/react": "^0.26.13"
+    "react-dom": "*"
   },
   "files": [
     "build"
