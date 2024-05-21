@@ -9,6 +9,7 @@ import { Text } from './components/Text';
 import { TextArea } from './components/TextArea';
 import { Checkbox } from './components/toggles/Checkbox';
 import { Switch } from './components/toggles/Switch';
+import { Tabs } from './components/Tabs';
 import { Radio } from './components/toggles/Radio';
 import { TextEditor } from './components/TextEditor';
 import { Chip } from './components/Chip';
@@ -24,6 +25,7 @@ export {
   TextArea,
   Checkbox,
   Switch,
+  Tabs,
   Radio,
   TextEditor,
   Chip,
