@@ -6,23 +6,33 @@ import { compPrefix } from './constants';
 
 interface TabsHeaderProps {
   items: TabItem[];
+  classNameHeader?: string;
+  classNameHeaderButtons?: string;
 }
 
-const buildBtnStyles = (activeKey: string, prevKey: string) => {
-  return cn(`${compPrefix}__tab_btn`, {
-    [`${compPrefix}__tab_btn--active`]: activeKey === prevKey,
-  });
+const buildBtnStyles = (activeKey: string, prevKey: string, className?: string) => {
+  return cn(
+    `${compPrefix}__tab_btn`,
+    {
+      [`${compPrefix}__tab_btn--active`]: activeKey === prevKey,
+    },
+    className
+  );
 };
 
-export const TabsHeader: FC<TabsHeaderProps> = ({ items }) => {
+export const TabsHeader: FC<TabsHeaderProps> = ({
+  items,
+  classNameHeader,
+  classNameHeaderButtons,
+}) => {
   const { activeKey, setActiveKey } = useContext(TabContext);
   return (
-    <div className={'tabs_header'}>
+    <div className={cn(`${compPrefix}_header`, classNameHeader)}>
       {items.map(({ key, label }) => {
         return (
           <button
             key={key}
-            className={buildBtnStyles(activeKey, key)}
+            className={buildBtnStyles(activeKey, key, classNameHeaderButtons)}
             onClick={() => setActiveKey(key)}
           >
             {label}

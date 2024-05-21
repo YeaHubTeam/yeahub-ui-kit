@@ -7,5 +7,8 @@ export type TabItem = {
 export interface TabsProps {
   items: TabItem[];
   defaultActiveKey?: string;
-  onChange: (activeKey: string) => void;
+  onChange?: (activeKey: string) => void;
+  classNameHeader?: string;
+  classNameHeaderButtons?: string;
+  classNameContent?: string;
 }

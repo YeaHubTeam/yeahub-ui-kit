@@ -1,5 +1,50 @@
 .yeahub-tabs {
-  border: 1px solid blue;
   width: 100%;
   font-family: inherit;
+}
+
+.yeahub-tabs > .yeahub-tabs_header {
+  display: inline-flex;
+  width: 100%;
+  flex: auto;
+  gap: 10px;
+  border-bottom: 1px solid var(--palette-ui-black-50);
+  padding-bottom: 10px;
+}
+
+.yeahub-tabs_header > .yeahub-tabs__tab_btn {
+  appearance: none;
+  border: none;
+  font-family: inherit;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.yeahub-tabs_header > .yeahub-tabs__tab_btn:not(.yeahub-tabs__tab_btn--active):after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  bottom: -11px;
+  left: 0;
+  background-color: blueviolet;
+  transition: all 0.3s ease;
+}
+
+.yeahub-tabs_header
+  > .yeahub-tabs__tab_btn:not(.yeahub-tabs__tab_btn--active):hover:after {
+  opacity: 1;
+}
+
+.yeahub-tabs_header > .yeahub-tabs__tab_btn--active:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -11px;
+  left: 0;
+  background-color: var(--palette-ui-purple-800);
+  transition: all 0.3s ease;
 }

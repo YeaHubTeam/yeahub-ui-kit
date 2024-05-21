@@ -6,12 +6,12 @@ import { TabsContent } from './TabsContent';
 import { compPrefix } from './constants';
 
 export const Tabs: FC<TabsProps> = memo((props) => {
-  const { defaultActiveKey = '1', items } = props;
+  const { defaultActiveKey = '1' } = props;
   return (
     <TabContextProvider defaultValue={defaultActiveKey}>
       <div className={`${compPrefix}`}>
-        <TabsHeader items={items} />
-        <TabsContent items={items} />
+        <TabsHeader {...props} />
+        <TabsContent {...props} />
       </div>
     </TabContextProvider>
   );
