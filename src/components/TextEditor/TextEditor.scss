@@ -1,5 +1,24 @@
 .ck.ck-content {
   min-height: 200px;
+
+  ul,
+  ol {
+    display: block;
+
+    margin-top: 1em;
+    margin-right: 0;
+    margin-bottom: 1em;
+    margin-left: 0;
+    padding-left: 40px;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
 }
 
 /* override styles for inline ckeditor */

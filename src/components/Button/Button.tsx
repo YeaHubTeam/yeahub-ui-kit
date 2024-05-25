@@ -13,7 +13,7 @@ export const Button = memo(
       {
         theme = 'primary',
         size = 'medium',
-        value,
+        children,
         textClassName,
         isActive,
         className,
@@ -46,7 +46,7 @@ export const Button = memo(
           {...otherProps}
         >
           {preffix}
-          {value && <span className={textClassName}>{value}</span>}
+          {children && <span className={textClassName}>{children}</span>}
           {suffix}
           {(badge || badge === 0) && <div className={`${compPrefix}-badge`}>{badge}</div>}
         </Component>
