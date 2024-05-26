@@ -7,7 +7,14 @@ const compPrefix = `${prefix}-input`;
 
 export const Input: FC<InputProps> = memo(
   forwardRef((props, ref) => {
-    const { preffix, suffix, className = '', disabled = false, ...otherProps } = props;
+    const {
+      preffix,
+      suffix,
+      className = '',
+      disabled = false,
+      hasError,
+      ...otherProps
+    } = props;
 
     const inputRef = useRef<HTMLInputElement | null>(null);
     const cbRef = useCallback(
@@ -25,6 +32,7 @@ export const Input: FC<InputProps> = memo(
 
     const inputContainerClassNames = cn(`${compPrefix}-wrapper`, className, {
       [`${compPrefix}-disabled`]: disabled,
+      [`${compPrefix}-hasError`]: hasError,
     });
 
     return (

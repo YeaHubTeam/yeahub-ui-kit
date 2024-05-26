@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     theme: 'primary',
-    value: 'Primary button',
+    children: 'Primary button',
     preffix: <Icon icon="addressBook" color="--palette-ui-white-900" size={32} />,
     suffix: <Icon icon="search" color="--palette-ui-white-900" size={32} />,
   },
@@ -29,13 +29,9 @@ export const Primary: Story = {
         <br />
         <Button {...rest} />
         <br />
-        <Button
-          suffix={suffix}
-          isActive
-          value="Primary pressed"
-          title="Primary pressed"
-          theme="primary"
-        />
+        <Button suffix={suffix} isActive title="Primary pressed" theme="primary">
+          Primary button
+        </Button>
         <br />
         <Button
           preffix={preffix}
@@ -52,7 +48,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     theme: 'secondary',
-    value: 'Secondary button',
+    children: 'Secondary button',
     preffix: <Icon icon="search" size={32} />,
     suffix: <Icon icon="search" size={24} />,
   },
@@ -64,13 +60,9 @@ export const Secondary: Story = {
         <br />
         <Button {...rest} />
         <br />
-        <Button
-          suffix={suffix}
-          isActive
-          value="Secondary pressed"
-          title="Secondary pressed"
-          theme="secondary"
-        />
+        <Button suffix={suffix} isActive title="Secondary pressed" theme="secondary">
+          Secondary button
+        </Button>
         <br />
         <Button
           preffix={preffix}
@@ -87,7 +79,7 @@ export const Secondary: Story = {
 export const Outline: Story = {
   args: {
     theme: 'outline',
-    value: 'Outline button',
+    children: 'Outline button',
     preffix: <Icon icon="search" size={24} />,
     suffix: <Icon icon="search" size={24} />,
   },
@@ -99,13 +91,9 @@ export const Outline: Story = {
         <br />
         <Button {...rest} />
         <br />
-        <Button
-          suffix={suffix}
-          isActive
-          value="Outline pressed"
-          title="Outline pressed"
-          theme={args.theme}
-        />
+        <Button suffix={suffix} isActive title="Outline pressed" theme={args.theme}>
+          Outline button
+        </Button>
         <br />
         <Button preffix={preffix} size="small" title="Outline small" disabled {...rest} />
       </>
@@ -116,7 +104,7 @@ export const Outline: Story = {
 export const Tertiary: Story = {
   args: {
     theme: 'tertiary',
-    value: 'Tertiary button',
+    children: 'Tertiary button',
     preffix: <Icon icon="search" size={24} />,
     suffix: <Icon icon="search" size={24} />,
   },
@@ -128,13 +116,9 @@ export const Tertiary: Story = {
         <br />
         <Button {...rest} />
         <br />
-        <Button
-          suffix={suffix}
-          isActive
-          value="Tertiary pressed"
-          title="Tertiary pressed"
-          theme={args.theme}
-        />
+        <Button suffix={suffix} isActive title="Tertiary pressed" theme={args.theme}>
+          Tertiary button
+        </Button>
         <br />
         <Button
           preffix={preffix}
@@ -151,7 +135,7 @@ export const Tertiary: Story = {
 export const Link: Story = {
   args: {
     theme: 'link',
-    value: 'Link button',
+    children: 'Link button',
     tagName: 'a',
     preffix: <Icon icon="search" size={24} />,
     suffix: <Icon icon="search" size={24} />,
@@ -164,13 +148,9 @@ export const Link: Story = {
         <br />
         <Button preffix={preffix} size="large" {...rest} />
         <br />
-        <Button
-          suffix={suffix}
-          isActive
-          value="Link pressed"
-          theme={args.theme}
-          tagName={args.tagName}
-        />
+        <Button suffix={suffix} isActive theme={args.theme} tagName={args.tagName}>
+          Link button
+        </Button>
         <br />
         <Button preffix={preffix} size="small" disabled {...rest} />
       </>
@@ -181,7 +161,7 @@ export const Link: Story = {
 export const Destructive: Story = {
   args: {
     theme: 'destructive',
-    value: 'Destructive button',
+    children: 'Destructive button',
     preffix: <Icon icon="search" size={24} />,
     suffix: <Icon icon="search" size={24} />,
   },
@@ -196,11 +176,12 @@ export const Destructive: Story = {
         <Button
           suffix={suffix}
           isActive
-          value="Destructive pressed"
           title="Destructive pressed"
           theme={args.theme}
           tagName={args.tagName}
-        />
+        >
+          Destructive button
+        </Button>
         <br />
         <Button
           preffix={preffix}
@@ -217,7 +198,7 @@ export const Destructive: Story = {
 export const DestructiveSecondary: Story = {
   args: {
     theme: 'destructive-secondary',
-    value: 'Destructive button',
+    children: 'Destructive button',
     preffix: <Icon icon="search" size={24} />,
     suffix: <Icon icon="search" size={24} />,
   },
@@ -232,11 +213,12 @@ export const DestructiveSecondary: Story = {
         <Button
           suffix={suffix}
           isActive
-          value="Destructive pressed"
           title="Destructive pressed"
           theme={args.theme}
           tagName={args.tagName}
-        />
+        >
+          Destructive button
+        </Button>
         <br />
         <Button
           preffix={preffix}
@@ -253,7 +235,7 @@ export const DestructiveSecondary: Story = {
 export const DestructiveOutline: Story = {
   args: {
     theme: 'destructive-outline',
-    value: 'Destructive button',
+    children: 'Destructive button',
     preffix: <Icon icon="search" size={24} />,
     suffix: <Icon icon="search" size={24} />,
   },
@@ -268,11 +250,12 @@ export const DestructiveOutline: Story = {
         <Button
           suffix={suffix}
           isActive
-          value="Destructive pressed"
           title="Destructive pressed"
           theme={args.theme}
           tagName={args.tagName}
-        />
+        >
+          Destructive button
+        </Button>
         <br />
         <Button
           preffix={preffix}
@@ -289,7 +272,7 @@ export const DestructiveOutline: Story = {
 export const DestructiveTertiary: Story = {
   args: {
     theme: 'destructive-tertiary',
-    value: 'Destructive button',
+    children: 'Destructive button',
     preffix: <Icon icon="search" size={24} />,
     suffix: <Icon icon="search" size={24} />,
   },
@@ -304,11 +287,12 @@ export const DestructiveTertiary: Story = {
         <Button
           suffix={suffix}
           isActive
-          value="Destructive pressed"
           title="Destructive pressed"
           theme={args.theme}
           tagName={args.tagName}
-        />
+        >
+          Destructive button
+        </Button>
         <br />
         <Button
           preffix={preffix}
@@ -325,7 +309,7 @@ export const DestructiveTertiary: Story = {
 export const Badge: Story = {
   args: {
     theme: 'primary',
-    value: 'Primary button',
+    children: 'Primary button',
     preffix: <Icon icon="search" size={24} />,
     suffix: <Icon icon="search" size={24} />,
   },
@@ -335,9 +319,13 @@ export const Badge: Story = {
       <>
         <Button preffix={preffix} size="large" badge={46} {...rest} />
         <br />
-        <Button badge={46} value="Secondary button" theme="secondary" />
+        <Button badge={46} theme="secondary">
+          Primary button
+        </Button>
         <br />
-        <Button suffix={suffix} value="Primary pressed" theme="outline" badge={46} />
+        <Button suffix={suffix} theme="outline" badge={46}>
+          Primary button
+        </Button>
         <br />
         <Button preffix={preffix} size="small" badge={46} disabled {...rest} />
       </>

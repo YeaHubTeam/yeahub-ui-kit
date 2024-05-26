@@ -42,6 +42,19 @@
     }
   }
 
+  &.yeahub-input-hasError {
+    border-color: var(--palette-ui-red-800);
+
+    &:focus-within {
+      box-shadow: var(--yeahub-focus-shadow-error);
+
+      .yeahub-input-input {
+        caret-color: var(--palette-ui-red-500);
+      }
+    }
+
+  }
+
 }
 
 .yeahub-input-container {
