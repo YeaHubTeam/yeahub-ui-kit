@@ -109,3 +109,15 @@ export const InputDisabled: Story = {
     placeholder: 'Enter a text...',
   },
 };
+
+export const InputError: Story = {
+  render: (props) => (
+    <InputWithHooks suffix={<Icon icon="search" size={20} />} {...props} />
+  ),
+  name: 'InputDisabled',
+  args: {
+    value: '',
+    placeholder: 'Enter a text...',
+    hasError: true,
+  },
+};

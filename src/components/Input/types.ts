@@ -8,6 +8,7 @@ export interface InputProps extends React.ComponentPropsWithRef<'input'> {
   suffix?: React.ReactNode;
   disabled?: boolean;
   className?: string;
+  hasError?: boolean;
 }
 
 export type Ref = HTMLInputElement;
