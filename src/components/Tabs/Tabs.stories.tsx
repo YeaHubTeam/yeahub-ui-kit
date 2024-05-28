@@ -10,7 +10,18 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    defaultActiveKey: {
+      control: {
+        type: 'text',
+      },
+      description: 'The key of the initially active tab',
+    },
+    onChange: {
+      action: 'changed',
+      description: 'Callback fired when the active tab is changed',
+    },
+  },
 } satisfies Meta<typeof Tabs>;
 
 export default meta;
@@ -54,5 +65,36 @@ export const BaseTab: Story = {
   name: 'Basic',
   args: {
     items,
+  },
+};
+
+export const CustomDefaultActiveKey: Story = {
+  render: (props) => <Tabs {...props} />,
+  name: 'Custom Default Active Key',
+  args: {
+    items,
+    defaultActiveKey: '3',
+  },
+};
+
+export const WithCustomStyles: Story = {
+  render: (props) => <Tabs {...props} />,
+  name: 'With Custom Styles',
+  args: {
+    items,
+    classNameHeader: 'custom-header',
+    classNameHeaderButtons: 'custom-header-buttons',
+    classNameContent: 'custom-content',
+  },
+};
+
+export const WithOnChangeHandler: Story = {
+  render: (props) => <Tabs {...props} />,
+  name: 'With OnChange Handler',
+  args: {
+    items,
+    onChange: (activeKey: string) => {
+      alert(`Active tab changed to: ${activeKey}`);
+    },
   },
 };

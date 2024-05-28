@@ -10,20 +10,23 @@ export const TabContext = createContext<TabContextProps>({} as TabContextProps);
 interface TabContextProviderProps {
   children: React.ReactNode;
   defaultValue: string;
+  onChange?: (activeKey: string) => void;
 }
 export const TabContextProvider = ({
   children,
   defaultValue,
+  onChange,
 }: TabContextProviderProps) => {
-  const [activeKey, setActiveKey] = useState(defaultValue || '1');
+  const [activeKey, setActiveKeyState] = useState(defaultValue || '1');
 
-  const initialValue = useMemo(
-    () => ({
-      activeKey,
-      setActiveKey,
-      defaultValue,
-    }),
-    [activeKey, defaultValue]
-  );
-  return <TabContext.Provider value={initialValue}>{children}</TabContext.Provider>;
+  const setActiveKey = (key: string) => {
+    setActiveKeyState(key);
+    if (onChange) {
+      onChange(key);
+    }
+  };
+
+  const value = useMemo(() => ({ activeKey, setActiveKey }), [activeKey]);
+
+  return <TabContext.Provider value={value}>{children}</TabContext.Provider>;
 };
