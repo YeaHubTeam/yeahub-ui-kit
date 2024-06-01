@@ -13,6 +13,7 @@ import { Tabs } from './components/Tabs';
 import { Radio } from './components/toggles/Radio';
 import { TextEditor } from './components/TextEditor';
 import { Chip } from './components/Chip';
+import { Range } from './components/Range';
 
 export {
   Button,
@@ -29,4 +30,5 @@ export {
   Radio,
   TextEditor,
   Chip,
+  Range,
 };
