@@ -1,0 +1,23 @@
+.yeahub-modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+}
+
+.yeahub-modal-content {
+  position: relative;
+  margin: 15px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.yeahub-modal-content > button:last-child {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -42px;
+}
