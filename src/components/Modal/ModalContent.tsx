@@ -8,7 +8,7 @@ import { FC } from 'react';
 import { prefix } from '../../prefix';
 import { useDialogContext } from './context/useDialogContext';
 import { Icon } from '../Icon';
-
+import cn from 'classnames';
 const compPrefix = `${prefix}-modal`;
 
 interface ModalContent extends React.HTMLAttributes<HTMLDivElement> {
@@ -20,6 +20,7 @@ interface ModalContent extends React.HTMLAttributes<HTMLDivElement> {
 export const ModalContent: FC<ModalContent> = ({
   contentRef,
   children,
+  className,
   ...otherProps
 }) => {
   const {
@@ -41,7 +42,7 @@ export const ModalContent: FC<ModalContent> = ({
             aria-labelledby={context.labelId ?? undefined}
             aria-describedby={context.descriptionId ?? undefined}
             {...context.getFloatingProps(otherProps)}
-            className={`${compPrefix}-content`}
+            className={cn(`${compPrefix}-content`, className)}
           >
             {children}
 
