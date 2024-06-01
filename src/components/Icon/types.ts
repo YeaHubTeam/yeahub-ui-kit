@@ -4,7 +4,7 @@ import { CSSPropertiesWithVars } from '../types';
 
 export type IconSize = 20 | 24 | 32;
 
-export interface IconProps extends ComponentPropsWithoutRef<'div'> {
+export interface IconProps extends ComponentPropsWithoutRef<'svg'> {
   icon: IconsName;
   size?: IconSize;
   color?: CSSPropertiesWithVars;

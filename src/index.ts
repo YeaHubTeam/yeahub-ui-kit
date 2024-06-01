@@ -15,6 +15,13 @@ import { TextEditor } from './components/TextEditor';
 import { Chip } from './components/Chip';
 import { Range } from './components/Range';
 
+import {
+  Modal,
+  ModalContent,
+  ModalDescription,
+  ModalHeading,
+  ModalTrigger,
+} from './components/Modal';
 export {
   Button,
   FormControl,
@@ -31,4 +38,9 @@ export {
   TextEditor,
   Chip,
   Range,
+  Modal,
+  ModalContent,
+  ModalDescription,
+  ModalHeading,
+  ModalTrigger,
 };
