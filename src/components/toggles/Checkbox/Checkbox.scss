@@ -1,15 +1,20 @@
 .yeahub-checkbox__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  display: inline-flex;
   user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
 
   .yeahub-checkbox_input {
-    width: 1;
+    width: 1px;
     height: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
+
+    ~.yeahub-checkbox_text {
+      flex-grow: 1;
+      white-space: normal;
+      margin-inline-start: 5px;
+    }
 
     &:checked {
       +.yeahub-checkbox {
