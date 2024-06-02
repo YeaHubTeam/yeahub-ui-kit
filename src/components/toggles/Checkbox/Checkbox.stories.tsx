@@ -35,7 +35,7 @@ export const BaseCheckbox: Story = {
     return (
       <div>
         <h2>Checked</h2>
-        <CheckboxWithHooks {...props} checked />
+        <CheckboxWithHooks {...props} checked label="Ср" />
         <br />
         <h2>Disabled</h2>
         <CheckboxWithHooks {...props} label="Disabled" disabled checked={false} />
