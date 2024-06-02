@@ -8,7 +8,9 @@
  * @property {boolean} [checked] - Indicates whether the checkbox is checked.
  */
 
-export interface CheckboxProps {
+import { ComponentPropsWithRef } from 'react';
+
+export interface CheckboxProps extends ComponentPropsWithRef<'input'> {
   disabled?: boolean;
   onToggle?: (isChecked: boolean) => void;
   className?: string;
