@@ -25,7 +25,14 @@ export const TabsHeader: FC<TabsHeaderProps> = ({
   classNameHeader,
   classNameHeaderButtons,
 }) => {
-  const { activeKey, setActiveKey } = useContext(TabContext);
+  const context = useContext(TabContext);
+
+  if (!context) {
+    throw new Error('TabsHeader must be used within a TabContextProvider');
+  }
+
+  const { activeKey, setActiveKey } = context;
+
   return (
     <div className={cn(`${compPrefix}_header`, classNameHeader)}>
       {items.map(({ key, label }) => {

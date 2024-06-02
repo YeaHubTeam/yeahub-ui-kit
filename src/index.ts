@@ -13,7 +13,15 @@ import { Tabs } from './components/Tabs';
 import { Radio } from './components/toggles/Radio';
 import { TextEditor } from './components/TextEditor';
 import { Chip } from './components/Chip';
+import { Range } from './components/Range';
 
+import {
+  Modal,
+  ModalContent,
+  ModalDescription,
+  ModalHeading,
+  ModalTrigger,
+} from './components/Modal';
 export {
   Button,
   FormControl,
@@ -29,4 +37,10 @@ export {
   Radio,
   TextEditor,
   Chip,
+  Range,
+  Modal,
+  ModalContent,
+  ModalDescription,
+  ModalHeading,
+  ModalTrigger,
 };

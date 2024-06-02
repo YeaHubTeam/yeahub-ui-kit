@@ -14,12 +14,14 @@ export const Icon: FC<IconProps> = memo(
     className,
     arg = false,
     onClick,
+    ...props
   }) => {
     const SVG = icons[icon](arg);
     const svgColor = `var(${color})`;
 
     return (
       <SVG
+        {...props}
         className={cn(compPrefix, className, {
           [`${compPrefix}_clickable`]: Boolean(onClick),
         })}
