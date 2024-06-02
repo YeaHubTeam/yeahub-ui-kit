@@ -16,13 +16,19 @@ export const Checkbox: FC<CheckboxProps> = forwardRef<HTMLInputElement, Checkbox
     };
 
     return (
-      <label className={cn(`${compPrefix}__wrapper`)}>
+      <label
+        className={cn(`${compPrefix}__wrapper`)}
+        role="checkbox"
+        aria-checked={checked}
+        aria-disabled={disabled}
+      >
         <input
           type="checkbox"
           className={`${compPrefix}_input`}
           onChange={handleToggle}
           checked={checked}
           disabled={disabled}
+          aria-hidden
           ref={ref}
           {...otherProps}
         />
