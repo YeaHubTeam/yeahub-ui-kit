@@ -79,3 +79,30 @@ export const Default: Story = {
     ],
   },
 };
+
+export const Disabled: Story = {
+  render: (args) => {
+    const [value, setValue] = React.useState<any>(args.value?.toString());
+
+    return <Select {...args} onChange={setValue} value={value} />;
+  },
+  argTypes: {
+    disabled: {
+      table: {
+        disable: true,
+      },
+    },
+  },
+  args: {
+    type: 'default',
+    value: '1',
+    disabled: true,
+    options: [
+      { label: 'Option 1', value: '1' },
+      { label: 'Option 2', value: '2' },
+      { label: 'Option 3', value: '3' },
+      { label: 'Option 4', value: '4' },
+      { label: 'Option 5', value: '5' },
+    ],
+  },
+};

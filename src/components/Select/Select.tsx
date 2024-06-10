@@ -53,8 +53,8 @@ const CustomSelect: FC<SingleSelectProps> = ({
         tabIndex={0}
         onKeyDown={onKeyDown}
         key={index}
-        className={cn(`${compPrefix}-menu-option`, `${prefix}-interactable`, {
-          [`${prefix}-disabled`]: value === option.value,
+        className={cn(`${compPrefix}-menu-option`, `${compPrefix}-interactable`, {
+          [`${compPrefix}-disabled`]: value === option.value,
         })}
         onClick={() => {
           onChange(option.value);
@@ -81,21 +81,21 @@ const CustomSelect: FC<SingleSelectProps> = ({
 
   const selectWrapperClassNames = cn(
     `${compPrefix}-wrapper`,
-    disabled ? `${prefix}-disabled` : `${prefix}-interactable`
+    disabled ? `${compPrefix}-disabled` : `${compPrefix}-interactable`
   );
 
   const containerClassNames = cn(`${compPrefix}-container`, {
-    [`${prefix}-disabled`]: disabled,
+    [`${compPrefix}-disabled`]: disabled,
   });
 
   const customChevronContainerClassNames = cn(
     `${compPrefix}-custom-chevron-container`,
-    disabled ? `${prefix}-disabled` : `${prefix}-interactable`
+    disabled ? `${compPrefix}-disabled` : `${compPrefix}-interactable`
   );
 
   const clearContainerClassNames = cn(
     `${compPrefix}-clear-container`,
-    disabled ? `${prefix}-disabled` : `${prefix}-interactable`
+    disabled ? `${compPrefix}-disabled` : `${compPrefix}-interactable`
   );
 
   return (
@@ -116,6 +116,7 @@ const CustomSelect: FC<SingleSelectProps> = ({
                 disabled={disabled}
                 onMouseDown={onMouseDownSelect}
                 onKeyDown={onKeyDown}
+                onChange={() => onChange(value)}
                 value={value}
                 className={`${compPrefix}-native-element ${!value ? `${compPrefix}-native-element-no-value` : ''}`}
               >
