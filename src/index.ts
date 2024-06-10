@@ -14,6 +14,8 @@ import { Radio } from './components/toggles/Radio';
 import { TextEditor } from './components/TextEditor';
 import { Chip } from './components/Chip';
 import { Range } from './components/Range';
+import { Popover } from './components/Popover/Popover';
+import { Select } from './components/Select/Select';
 
 import {
   Modal,
@@ -43,4 +45,6 @@ export {
   ModalDescription,
   ModalHeading,
   ModalTrigger,
+  Popover,
+  Select,
 };
