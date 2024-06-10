@@ -17,4 +17,9 @@
   --yeahub-focus-shadow: 0 0 0 3px var(--palette-ui-purple-100);
   --yeahub-focus-shadow-error: 0 0 0 3px var(--palette-ui-red-100);
   --yeahub-focus-shadow-valid: 0 0 0 3px var(--palette-ui-green-200);
+
+  /*interactive*/
+  --yeahub-color-state-hover: var(--palette-ui-purple-400);
+  --yeahub-color-state-active: var(--palette-ui-purple-700)
+  --yeahub-color-state-focus: var(--palette-ui-purple-300)
 }

@@ -1,0 +1,133 @@
+.yeahub-select {
+  min-width: 150px;
+  /*display: flex;
+  flex-direction: column;
+  gap: 6px;*/
+}
+
+.yeahub-select .yeahub-interactable *,
+.yeahub-select-menu .yeahub-interactable * {
+  cursor: pointer;
+  position: relative;
+}
+
+.yeahub-select-menu .yeahub-disabled *,
+.yeahub-select-menu .yeahub-disabled {
+  cursor: not-allowed;
+}
+
+.yeahub-select .yeahub-popover {
+  height: 100%;
+  box-shadow: none;
+  border: 0;
+  background: transparent;
+  color: unset;
+  border-radius: unset;
+}
+
+.yeahub-select-container {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--palette-ui-purple-700);
+  border-radius: var(--yeahub-border-radius-round);
+  position: relative;
+  gap: 1px;
+  overflow: hidden;
+  background-color: #dfe2eb;
+}
+
+.yeahub-select-wrapper {
+  position: relative;
+  display: flex;
+  gap: 1px;
+  flex: 1 0 0;
+  overflow-x: auto;
+  align-self: stretch;
+  align-items: flex-start;
+}
+
+
+.yeahub-select-placeholder {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--palette-ui-black-300);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--palette-ui-white-900);
+  padding: 0px 8px 0px 12px;
+}
+
+.yeahub-select-native-element {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0px 8px 0px 12px;
+  text-overflow: ellipsis;
+  border: 0;
+  height: 34px;
+  width: 100%;
+  color: var(--palette-ui-black-900);
+  font: inherit;
+  background-color: var(--palette-ui-white-900);
+
+  &.yeahub-select-native-element-no-value {
+    opacity: 0;
+  }
+}
+
+.yeahub-select-custom-chevron-container {
+  display: flex;
+  width: 34px;
+  flex-shrink: 0;
+  min-height: 34px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  background-color: var(--palette-ui-white-900);
+}
+
+.yeahub-select-clear-container {
+  display: flex;
+  min-width: 34px;
+  min-height: 34px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--palette-ui-white-900);
+}
+
+.yeahub-select-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--palette-ui-white-900);
+  padding: 12px 16px;
+  border-color: transparent;
+  border-radius: 6px;
+}
+
+.yeahub-select .yeahub-select-menu .yeahub-select-menu-option::after {
+  border-radius: 6px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.yeahub-select-menu-option {
+  display: flex;
+  height: 38px;
+  gap: 6px;
+  align-items: center;
+  align-self: stretch;
+  position: relative;
+}
+
+.yeahub-select-menu-option .yeahub-interactable::after {
+  display: none;
+}
