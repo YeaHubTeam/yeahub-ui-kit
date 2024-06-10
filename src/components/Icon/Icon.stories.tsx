@@ -75,14 +75,23 @@ export const Icons: Story = {
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'space-between',
+            justifyContent: 'flex-start',
             gap: '20px',
             background: 'black',
             width: 800,
           }}
         >
           {Object.keys(icons).map((ico, idx) => (
-            <div key={idx} style={{ margin: '20' }}>
+            <div
+              key={idx}
+              style={{
+                margin: '20',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <span style={{ color: '#fff' }}>{ico}</span>
               <Icon icon={ico as IconProps['icon']} color={getRandomColorName()} />
             </div>
           ))}
