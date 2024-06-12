@@ -27,7 +27,7 @@ export const Range: FC<RangeProps> = ({
   const labelRef = useRef<HTMLDivElement>(null);
 
   const getPercentage = (value: number) => {
-    return step ? ((value - min) / (max - min)) * 100 : value;
+    return step ? ((value - min) / (max - min)) * 100 : (value / max) * 100;
   };
 
   const getLabelPosition = (value: number) => {
@@ -43,10 +43,10 @@ export const Range: FC<RangeProps> = ({
     setWidth();
     getLabelPosition(value);
     window.addEventListener('resize', setWidth);
-
     return () => {
       window.removeEventListener('resize', setWidth);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -65,7 +65,7 @@ export const Range: FC<RangeProps> = ({
 
   const renderSteps = () => {
     if (!step) return null;
-    const steps = [];
+    const steps: JSX.Element[] = [];
     const stepWidth = ((sliderWidth - thumbWidth) / (max - min)) * step;
 
     for (let i = min; i <= max; i += step) {
@@ -89,7 +89,7 @@ export const Range: FC<RangeProps> = ({
           gridTemplateColumns: `repeat(${max / step + 1},0px)`,
         }}
       >
-        {steps.map((step) => step)}
+        {steps.map((Step) => Step)}
       </div>
     );
   };
