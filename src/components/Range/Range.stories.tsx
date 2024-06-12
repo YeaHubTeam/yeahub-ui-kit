@@ -87,7 +87,7 @@ export const RangeWithoutScale: Story = {
   args: {
     value: 40,
     min: 0,
-    max: 100,
+    max: 500,
     hasScale: false,
   },
   render: (args) => {

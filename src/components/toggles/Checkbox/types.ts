@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 /**
  * Props for the Checkbox component.
  *
@@ -8,9 +9,7 @@
  * @property {boolean} [checked] - Indicates whether the checkbox is checked.
  */
 
-import { ComponentPropsWithRef } from 'react';
-
-export interface CheckboxProps extends ComponentPropsWithRef<'input'> {
+export interface CheckboxProps extends HTMLAttributes<HTMLInputElement> {
   disabled?: boolean;
   onToggle?: (isChecked: boolean) => void;
   className?: string;
