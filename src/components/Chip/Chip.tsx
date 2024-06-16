@@ -46,6 +46,7 @@ export const Chip = memo(
               icon="xCircle"
               size={20}
               color={disabled ? '--palette-ui-black-100' : '--palette-ui-red-600'}
+              onClick={onDelete}
             />
           )}
         </div>
