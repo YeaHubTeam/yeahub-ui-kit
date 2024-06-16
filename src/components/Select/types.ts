@@ -15,3 +15,15 @@ export interface SingleSelectProps {
   ariaLabel?: string;
   placeholder?: string;
 }
+
+export interface MultiSelectProps {
+  type: 'multi';
+  value: string[];
+  options: Option[];
+  onChange: (value: string[]) => void;
+  disabled?: boolean;
+  placeholder?: string;
+  fixedHeight?: boolean;
+
+  className?: string;
+}

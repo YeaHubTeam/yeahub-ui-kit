@@ -106,3 +106,42 @@ export const Disabled: Story = {
     ],
   },
 };
+
+export const MultiSelectGrouped: Story = {
+  render: (args) => {
+    const [value, setValue] = React.useState<any>(args.value);
+
+    return <Select {...args} onChange={setValue} value={value} />;
+  },
+  argTypes: {
+    type: {
+      table: {
+        disable: true,
+      },
+    },
+  },
+  args: {
+    type: 'multi',
+    placeholder: 'Select option',
+    value: ['1'],
+    options: [
+      { label: 'Option 1', value: '1a' },
+      { label: 'Option 2', value: '2a' },
+      { label: 'Option 3', value: '3a' },
+      { label: 'Option 1', value: '1b' },
+      { label: 'Option 2', value: '2b' },
+      { label: 'Option 3', value: '3b' },
+      { label: 'Option X', value: 'X' },
+      { label: 'Option Y', value: 'Y' },
+
+      { label: 'Option 11', value: '11a' },
+      { label: 'Option 12', value: '22a' },
+      { label: 'Option 13', value: '33a' },
+      { label: 'Option 11', value: '41b' },
+      { label: 'Option 12', value: '52b' },
+      { label: 'Option 13', value: '63b' },
+      { label: 'Option 1X', value: '7X' },
+      { label: 'Option 1Y', value: '8Y' },
+    ],
+  },
+};
