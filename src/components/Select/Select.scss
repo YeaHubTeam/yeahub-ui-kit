@@ -82,7 +82,7 @@
   flex: 1 0 0;
   overflow-x: auto;
   align-self: stretch;
-  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .yeahub-select-placeholder {
@@ -161,4 +161,43 @@
     background: var(--palette-ui-black-25);
     pointer-events: none;
   }
+}
+
+.yeahub-select-clear-value-container {
+  display: flex;
+  min-width: 34px;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.yeahub-select-value-prefix-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px);
+  height: 34px;
+  flex-shrink: 1;
+  width: 100%;
+  padding-left: 12px;
+}
+
+.yeahub-select-value-label {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.yeahub-select-value {
+  background: var(--palette-ui-white-900);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 0;
+  justify-content: space-between;
+  color: var(--palette-ui-black-900);
+  white-space: nowrap;
 }
