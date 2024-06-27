@@ -9,10 +9,11 @@
   border-radius: 12px;
   background-color: transparent;
   border: 1px solid var(--palette-ui-black-200);
+  user-select: none;
 
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover:where(.yeahub-chip-clickable),
+  &:focus:where(.yeahub-chip-clickable),
+  &:active:where(.yeahub-chip-clickable) {
     box-shadow: 0 0 0 1px var(--palette-ui-purple-800);
     background-color: var(--palette-ui-purple-50);
   }

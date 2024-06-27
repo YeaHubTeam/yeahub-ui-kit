@@ -31,6 +31,7 @@ export const Icon: FC<IconProps> = memo(
         viewBox={`0 0 32 32`}
         preserveAspectRatio="xMidYMid meet"
         onClick={onClick}
+        key={icon}
       />
     );
   }

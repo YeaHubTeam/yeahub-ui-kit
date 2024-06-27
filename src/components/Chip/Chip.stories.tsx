@@ -58,6 +58,21 @@ export const ChipClickable: Story = {
   args: { theme: 'primary' },
 };
 
+export const ChipNotClickable: Story = {
+  render: () => {
+    return (
+      <>
+        <Chip label="Some text" theme="primary" />
+        <br />
+        <Chip label="Some text" theme="primary" />
+        <br />
+        <Chip label="Some text" theme="primary" preffix={<Icon icon="figmaLogo" />} />
+      </>
+    );
+  },
+  args: { theme: 'primary' },
+};
+
 export const ChipDisabled: Story = {
   render: () => (
     <>
