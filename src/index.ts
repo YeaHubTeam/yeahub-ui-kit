@@ -16,6 +16,7 @@ import { Chip } from './components/Chip';
 import { Range } from './components/Range';
 import { Popover } from './components/Popover/Popover';
 import { Select } from './components/Select/Select';
+import { Tooltip } from './components/Tooltip/Tooltip';
 
 import {
   Modal,
@@ -47,4 +48,5 @@ export {
   ModalTrigger,
   Popover,
   Select,
+  Tooltip,
 };
