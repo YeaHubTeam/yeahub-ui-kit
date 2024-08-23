@@ -1,11 +1,11 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import { TabsProps } from './types';
 import { TabContextProvider } from './TabsProvider';
 import { TabsHeader } from './TabsHeader';
 import { TabsContent } from './TabsContent';
 import { compPrefix } from './constants';
 
-export const Tabs: FC<TabsProps> = memo((props) => {
+export const Tabs: FC<TabsProps> = (props) => {
   const { defaultActiveKey = '1', onChange } = props;
   return (
     <TabContextProvider defaultValue={defaultActiveKey} onChange={onChange}>
@@ -15,6 +15,6 @@ export const Tabs: FC<TabsProps> = memo((props) => {
       </div>
     </TabContextProvider>
   );
-});
+};
 
 Tabs.displayName = 'Tabs';

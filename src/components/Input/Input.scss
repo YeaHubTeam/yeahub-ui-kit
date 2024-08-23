@@ -77,6 +77,8 @@
   width: 100%;
   font-size: 0.85rem;
   background-color: transparent;
+  color: var(--palette-ui-black-900);
+
 
   &::placeholder {
     color: var(--palette-ui-black-100);
@@ -86,5 +88,6 @@
   &:focus {
     outline: none;
     caret-color: inherit;
+    color: var(--palette-ui-black-900);
   }
 }

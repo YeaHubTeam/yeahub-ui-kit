@@ -1,5 +1,5 @@
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import React, { FC, useCallback, useRef, memo } from 'react';
+import React, { FC, useCallback, useRef } from 'react';
 import type { EventInfo } from '@ckeditor/ckeditor5-utils';
 import cn from 'classnames';
 import { Editor } from '@ckeditor/ckeditor5-core';
@@ -10,7 +10,7 @@ import { prefix } from '../../prefix';
 
 const compPrefix = `${prefix}-text-editor`;
 
-export const TextEditor: FC<EditorProps> = memo((props) => {
+export const TextEditor: FC<EditorProps> = (props) => {
   const {
     isInline,
     data,
@@ -95,6 +95,6 @@ export const TextEditor: FC<EditorProps> = memo((props) => {
       />
     </div>
   );
-});
+};
 
 TextEditor.displayName = 'TextEditor';
