@@ -19,6 +19,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       preffix,
       suffix,
       badge,
+      fullWidth = false,
       type = 'button',
       tagName = defaultTag,
       disabled,
@@ -31,14 +32,11 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     return (
       <Component
         ref={ref}
-        className={classnames(
-          `${compPrefix}`,
-          ` ${compPrefix}-${[theme]} ${compPrefix}-${[size]}`,
-          className,
-          {
-            [`is-active`]: isActive,
-          }
-        )}
+        className={classnames(`${compPrefix}`, ` ${compPrefix}-${[theme]}`, className, {
+          [`is-active`]: isActive,
+          [`${compPrefix}-full`]: fullWidth,
+          [`${compPrefix}-${[size]}`]: !fullWidth,
+        })}
         disabled={disabled}
         aria-disabled={disabled}
         type={type}
