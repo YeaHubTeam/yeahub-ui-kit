@@ -10,4 +10,5 @@ export interface ButtonProps extends React.ComponentPropsWithRef<'button'> {
   iconClassName?: string;
   badge?: string | number;
   tagName?: 'button' | 'a';
+  fullWidth?: boolean;
 }
