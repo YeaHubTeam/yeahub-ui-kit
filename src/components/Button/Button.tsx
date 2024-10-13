@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import React, { forwardRef } from 'react';
 
-import { ButtonProps } from './types';
 import { prefix } from '../../prefix';
+import { ButtonProps } from './types';
 
 const compPrefix = `${prefix}-button`;
 const defaultTag = 'button';
@@ -15,7 +15,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       children,
       textClassName,
       isActive,
-      className,
+      className = '',
       preffix,
       suffix,
       badge,
@@ -32,11 +32,16 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     return (
       <Component
         ref={ref}
-        className={classnames(`${compPrefix}`, ` ${compPrefix}-${[theme]}`, className, {
-          [`is-active`]: isActive,
-          [`${compPrefix}-full`]: fullWidth,
-          [`${compPrefix}-${[size]}`]: !fullWidth,
-        })}
+        className={classnames(
+          `${compPrefix}`,
+          ` ${compPrefix}-${[theme]}`,
+          {
+            [`is-active`]: isActive,
+            [`${compPrefix}-full`]: fullWidth,
+            [`${compPrefix}-${[size]}`]: !fullWidth,
+          },
+          className
+        )}
         disabled={disabled}
         aria-disabled={disabled}
         type={type}

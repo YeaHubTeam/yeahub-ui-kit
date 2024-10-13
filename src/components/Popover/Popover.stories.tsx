@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Meta, StoryObj } from '@storybook/react';
-import { Popover } from './Popover';
-import { useEffect, useState } from 'react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../Button';
+import { Popover } from './Popover';
 
 const meta = {
   title: 'Components/Popover',

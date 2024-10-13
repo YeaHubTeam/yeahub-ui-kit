@@ -1,6 +1,6 @@
+import cn from 'classnames';
 import { CSSProperties, FC, useRef, useState } from 'react';
 import { TooltipProps } from './types';
-import cn from 'classnames';
 
 import {
   FloatingArrow,
@@ -29,6 +29,8 @@ export const Tooltip: FC<TooltipProps> = ({
   color = 'green',
   offsetTooltip = 10,
   placement = 'top',
+  shouldShowTooltip = true,
+  tooltipDelay = { open: 0, close: 150 },
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef<SVGSVGElement>(null);
@@ -52,7 +54,7 @@ export const Tooltip: FC<TooltipProps> = ({
     whileElementsMounted: autoUpdate,
   });
 
-  const hover = useHover(context, { move: false });
+  const hover = useHover(context, { move: false, delay: tooltipDelay });
   const role = useRole(context, { role: 'tooltip' });
 
   const { getReferenceProps, getFloatingProps } = useInteractions([hover, role]);
@@ -63,12 +65,14 @@ export const Tooltip: FC<TooltipProps> = ({
     border: `1px solid ${COLORS[color]}`,
   };
 
+  const isShowTooltip = isOpen && title && shouldShowTooltip;
+
   return (
     <>
       <span ref={refs.setReference} {...getReferenceProps()}>
         {children}
       </span>
-      {isOpen && title && (
+      {isShowTooltip && (
         <FloatingPortal>
           <div
             aria-label={ariaLabel}
@@ -77,17 +81,19 @@ export const Tooltip: FC<TooltipProps> = ({
             style={{ ...styles, ...floatingStyles, ...themeStyle }}
             {...getFloatingProps()}
           >
-            <FloatingArrow
-              tipRadius={1}
-              fill="white"
-              stroke={COLORS[color]}
-              strokeWidth={1}
-              height={8}
-              width={16}
-              context={context}
-              ref={arrowRef}
-            />
-            {title}
+            <div className="yeahub-tooltip-content">
+              <FloatingArrow
+                tipRadius={1}
+                fill="white"
+                stroke={COLORS[color]}
+                strokeWidth={1}
+                height={8}
+                width={16}
+                context={context}
+                ref={arrowRef}
+              />
+              {title}
+            </div>
           </div>
         </FloatingPortal>
       )}

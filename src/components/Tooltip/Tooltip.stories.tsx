@@ -1,12 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
-import { Tooltip } from './Tooltip';
-import { TooltipProps } from './types';
-import { Checkbox } from '../toggles/Checkbox/Checkbox';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
+import { Tooltip } from './Tooltip';
 
 const meta = {
   title: 'Components/Tooltip',
@@ -83,6 +81,6 @@ export const Default: Story = {
         <span style={{ color: 'green' }}>Пройдено</span>
       </div>
     ),
-    children: <Button theme="tertiary" value="Hover me" />,
+    children: <Button theme="tertiary">Hover me</Button>,
   },
 };
