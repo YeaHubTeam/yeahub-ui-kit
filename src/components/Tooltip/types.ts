@@ -1,4 +1,4 @@
-import { type Placement } from '@floating-ui/react';
+import { UseHoverProps, type Placement } from '@floating-ui/react';
 
 type Color = 'green' | 'yellow' | 'gray' | 'violet';
 
@@ -22,4 +22,6 @@ export interface TooltipProps {
   color?: Color;
   ariaLabel?: string;
   className?: string;
+  shouldShowTooltip?: boolean;
+  tooltipDelay: UseHoverProps['delay'];
 }
