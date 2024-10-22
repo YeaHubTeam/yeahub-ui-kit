@@ -26,6 +26,8 @@ import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
 import type { Editor, PluginConstructor } from '@ckeditor/ckeditor5-core';
 import { Link } from '@ckeditor/ckeditor5-link';
 
+import { CustomClipboard } from '../plugins';
+
 const builtInPlugins: Array<PluginConstructor<Editor>> = [
   Alignment,
   Bold,
@@ -51,6 +53,6 @@ const builtInPlugins: Array<PluginConstructor<Editor>> = [
   Link,
 ];
 
-const customPlugins: Array<PluginConstructor<Editor>> = [];
+const customPlugins: Array<PluginConstructor<Editor>> = [CustomClipboard];
 
 export const plugins = [...builtInPlugins, ...customPlugins];
