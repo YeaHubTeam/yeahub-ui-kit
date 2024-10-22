@@ -1,6 +1,6 @@
 {
   "name": "yeahub-ui-kit",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "sideEffects": true,
   "description": "",
   "main": "./build/index.js",

@@ -22,7 +22,7 @@
 
   code {
     border-radius: 12px;
-    padding: 5px;
+    padding: 1.5px 5px;
 
     background: linear-gradient(180deg, #ffffff 0%, #e8daff 100%);
   }
@@ -30,7 +30,8 @@
   pre {
     border-radius: 12px;
     border: 1px solid #fdf4ff;
-
+    padding: 20px;
+    margin: 20px 0;
     background: linear-gradient(180deg, #ffffff 0%, #e8daff 100%);
   }
 

@@ -11,13 +11,15 @@ import juice from 'juice';
 const styles = `
     code {
         border-radius: 12px;
-        padding: 5px;
+        padding: 1.5px 5px;
         background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);
     }
 
     pre {
         border-radius: 12px;
         border: 1px solid #FDF4FF;
+        padding: 20px;
+        margin: 20px 0;
         background: linear-gradient(180deg, #FFFFFF 0%, #E8DAFF 100%);
     }
 
