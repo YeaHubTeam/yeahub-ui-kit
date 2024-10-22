@@ -1,6 +1,6 @@
 {
   "name": "yeahub-ui-kit",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "sideEffects": true,
   "description": "",
   "main": "./build/index.js",
@@ -75,6 +75,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-react": "^6.3.0",
     "@floating-ui/react": "^0.26.13",
+    "juice": "^11.0.0",
     "react": "*",
     "react-dom": "*"
   },

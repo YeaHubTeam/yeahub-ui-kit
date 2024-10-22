@@ -20,6 +20,25 @@
     list-style-type: decimal;
   }
 
+  code {
+    border-radius: 12px;
+    padding: 5px;
+
+    background: linear-gradient(180deg, #ffffff 0%, #e8daff 100%);
+  }
+
+  pre {
+    border-radius: 12px;
+    border: 1px solid #fdf4ff;
+
+    background: linear-gradient(180deg, #ffffff 0%, #e8daff 100%);
+  }
+
+  pre code {
+    border: none;
+    padding: 0;
+    background: none;
+  }
 }
 
 /* override styles for inline ckeditor */

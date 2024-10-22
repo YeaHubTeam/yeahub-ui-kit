@@ -1,5 +1,5 @@
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import React, { FC, useCallback, useRef } from 'react';
+import React, { FC, useCallback, useRef, useMemo } from 'react';
 import type { EventInfo } from '@ckeditor/ckeditor5-utils';
 import cn from 'classnames';
 import { Editor } from '@ckeditor/ckeditor5-core';
@@ -7,6 +7,7 @@ import { Editor } from '@ckeditor/ckeditor5-core';
 import CKE from './vendor/dist/ckeditor.js';
 import { EditorProps } from './types';
 import { prefix } from '../../prefix';
+import { injectInlineStyles } from './helpers/style';
 
 const compPrefix = `${prefix}-text-editor`;
 
@@ -33,7 +34,8 @@ export const TextEditor: FC<EditorProps> = (props) => {
       if (!onChange) return;
 
       const editorData = editor.getData();
-      onChange(editorData);
+      const dataWithInlineStyles = injectInlineStyles(editorData);
+      onChange(dataWithInlineStyles);
     },
     [onChange, disabled]
   );
@@ -43,7 +45,8 @@ export const TextEditor: FC<EditorProps> = (props) => {
       if (!onBlur) return;
 
       const editorData = editor.getData();
-      onBlur(editorData);
+      const dataWithInlineStyles = injectInlineStyles(editorData);
+      onBlur(dataWithInlineStyles);
     },
     [onBlur]
   );
@@ -53,7 +56,8 @@ export const TextEditor: FC<EditorProps> = (props) => {
       if (!onFocus) return;
 
       const editorData = editor.getData();
-      onFocus(editorData);
+      const dataWithInlineStyles = injectInlineStyles(editorData);
+      onFocus(dataWithInlineStyles);
     },
     [onFocus]
   );
@@ -80,12 +84,23 @@ export const TextEditor: FC<EditorProps> = (props) => {
     [onReady, autofocus]
   );
 
+  // Injected inline styles should not trigger an internal additional update inside CKE engine and further onChange event.
+  // If new data is the same data with additional inline styles decoration, pass original value into CKE engine.
+  const normalizedData = useMemo(() => {
+    const editorRawData = editorRef.current?.getData();
+    return editorRawData &&
+      (editorRawData.includes('<pre') || editorRawData.includes('<code')) && // Styles injection is only used for pre and code. Hence, narrow down to pre/code cases only for optimization purpose.
+      data === injectInlineStyles(editorRawData)
+      ? editorRawData
+      : data;
+  }, [data]);
+
   return (
     <div ref={editorContainerRef} className={cn(compPrefix, className)}>
       <CKEditor
         id={id}
         editor={isInline ? CKE.CustomBalloonEditor : CKE.CustomClassicEditor}
-        data={data}
+        data={normalizedData}
         config={config}
         disabled={disabled}
         onReady={handleReady}
